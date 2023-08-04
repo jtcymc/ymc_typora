@@ -28,14 +28,14 @@ Copy theme files to Typora themes folder:
 ### Typora extend
 find `{Typora Install Root Directory}\resources\window.html`,search `id="write"` go to `<div id="write" class="ty-before-first-render" contenteditable="false" spellcheck="true" tabindex="-1">` previously added the following codes:
 ```html
-  <script src="https://gitcode.net/m0_58311262/ymc_typora/-/raw/master/js/autoload-shaw-page-component.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora/js/autoload-shaw-page-component.min.js"></script>
 ```
 
 ## ⚙ Configuration & Use
 1. Open or Restart Typora. Click on `Themes` to switch to `shaw-light`.
 2. `File` -> `Preferences` -> `Export` ==> `HTML` ==> `Append in <head/>` add :
 ```html
-  <script src="https://gitcode.net/m0_58311262/ymc_typora/-/raw/master/js/autoload-shaw-page-component.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora/js/autoload-shaw-page-component.min.js"></script>
 ```
 
 
