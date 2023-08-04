@@ -51,14 +51,7 @@ class FloatBtnMenu {
                   <option value="">直接选择或搜索选择</option>
                   <option value="0" selected>Diana</option>
                   <option value="1">Ava</option>
-                  <option value="2">lafei4</option>
-                  <option value="3">小云</option>
-                  <option value="4">Bvb</option>
-                  <option value="5">Ariu</option>
-                  <option value="6">天使</option>
-                  <option value="7">yuanjia</option>
-                  <option value="8">nitorudraw</option>
-                  <option value="9">黑蜀黍</option>
+                  <option value="2">小云</option>
                 </select>
               </div>
             </div>
@@ -107,7 +100,7 @@ class FloatBtnMenu {
     divTag.style.cssText =
       "z-index: 999999; position: fixed; bottom: 20px; width: 60px; height: 60px;";
     let imgTag = document.createElement("img");
-    imgTag.src = "https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@latest/dist/assets/setting.png";
+    imgTag.src = "https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@0.0.2/dist/assets/setting.png";
     divTag.appendChild(imgTag);
     document.body.appendChild(divTag);
 

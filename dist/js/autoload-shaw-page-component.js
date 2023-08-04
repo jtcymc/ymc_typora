@@ -1,4 +1,4 @@
-var cdn_url = "https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@latest/dist";
+var cdn_url = "https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@0.0.2/dist";
 // oss_js_path 参数建议使用绝对路径
 const oss_js_path = `${cdn_url}/js`;
 const live2d_url_prefix = `${oss_js_path}/live2d/lib`;
@@ -64,7 +64,7 @@ function loadBaseDeps() {
       "shaw-float-btn",
       "js",
       false,
-      false
+      true
     ).then(() => {
       new FloatBtnMenu();
     });
