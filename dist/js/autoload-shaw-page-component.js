@@ -122,7 +122,7 @@ function loadLive2D() {
         true
       ),
       loadExternalResource(
-        `${live2d_url_prefix}`,
+        `${oss_css_path}/pio`,
         "pio",
         "css",
         false,
@@ -150,8 +150,9 @@ function loadCSSComponent() {
     `${oss_js_path}/ui`,
     "shaw-css-component",
     "js",
+    false,
     true,
-    true
+      true
   ).then(() => {
     if (formMenuData && Object.keys(formMenuData).length > 0) {
       if (formMenuData.mouseHeart == 1) {
