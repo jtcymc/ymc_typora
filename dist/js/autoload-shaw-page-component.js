@@ -1,4 +1,4 @@
-var cdn_url = "/dist/";
+var cdn_url = "https://gitcode.net/m0_58311262/ymc_typora/-/raw/master/dist";
 // oss_js_path 参数建议使用绝对路径
 const oss_js_path = `${cdn_url}/js`;
 const live2d_url_prefix = `${oss_js_path}/live2d/lib`;
