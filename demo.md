@@ -89,9 +89,9 @@ Obsidian：标签支持，<font title="yellow">导出文件自动隐藏</font>
 
 图片：<font title="blue">图片自动编号及图释</font>
 
-<img src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@1.0.1/docs/imgs/shaw-light.png" style="zoom: 67%;" alt="图片自动编号及图释" />
+<img src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@0.0.4/docs/imgs/shaw-light.png" style="zoom: 67%;" alt="图片自动编号及图释" />
 
-<img src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@1.0.1/docs/imgs/shaw-dark.png" style="zoom: 67%;" alt="黑夜主题" />
+<img src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@0.0.4/docs/imgs/shaw-dark.png" style="zoom: 67%;" alt="黑夜主题" />
 
 
 

@@ -1,4 +1,4 @@
-var cdn_url = "https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@1.0.1/dist";
+var cdn_url = "https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@0.0.4/dist";
 // oss_js_path 参数建议使用绝对路径
 const oss_js_path = `${cdn_url}/js`;
 const live2d_url_prefix = `${oss_js_path}/live2d/lib`;
@@ -50,13 +50,13 @@ function loadBaseDeps() {
       "js",
       false
     ),
-    loadExternalResource(
-      `http://cdn.bootcss.com/font-awesome/4.4.0/css`,
-      "font-awesome",
-      "css",
-      false,
-      true
-    ),
+    // loadExternalResource(
+    //   `http://cdn.bootcss.com/font-awesome/4.4.0/css`,
+    //   "font-awesome",
+    //   "css",
+    //   false,
+    //   true
+    // ),
     loadExternalResource(`${oss_css_path}`, "animate", "css", false, true),
   ]).then(() => {
     loadExternalResource(

@@ -2,7 +2,7 @@
 
 # ymc_typora
 
-<img src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@1.0.1/docs/imgs/theme-shaw.png" style="zoom:80%;" alt="theme-shaw" />
+<img src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@0.0.4/docs/imgs/theme-shaw.png" style="zoom:80%;" alt="theme-shaw" />
 
 Based on [hexo-theme-melody](*https://github.com/Molunerfinn/hexo-theme-melody*)  &   [drake-juejin](https://github.com/liangjingkanji/DrakeTyporaTheme)theme.
 
@@ -28,14 +28,14 @@ Copy theme files to Typora themes folder:
 ### Typora extend
 find `{Typora Install Root Directory}\resources\window.html`,search `id="write"` go to `<div id="write" class="ty-before-first-render" contenteditable="false" spellcheck="true" tabindex="-1">` previously added the following codes:
 ```html
-  <script src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@1.0.1/js/autoload-shaw-page-component.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@0.0.4/js/autoload-shaw-page-component.min.js"></script>
 ```
 
 ## ⚙ Configuration & Use
 1. Open or Restart Typora. Click on `Themes` to switch to `shaw-light`.
 2. `File` -> `Preferences` -> `Export` ==> `HTML` ==> `Append in <head/>` add :
 ```html
-  <script src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@1.0.1/js/autoload-shaw-page-component.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@0.0.4/js/autoload-shaw-page-component.min.js"></script>
 ```
 
 
@@ -62,18 +62,8 @@ find `{Typora Install Root Directory}\resources\window.html`,search `id="write"`
 
 
 
+ <iframe src="https://jtcymc.github.io/ymc_typora/" style="width:100%;height:700px;border: 1px solid"/>
 
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-</head>
-<body>
-  <pre>
-    <iframe src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@1.0.1/index.html" style="width:100%;height:700px;border: 1px solid"/>
-  </pre>
-</body>
-</html>
 
 
 
@@ -81,6 +71,6 @@ find `{Typora Install Root Directory}\resources\window.html`,search `id="write"`
 
 ## 📷 Screenshots
 
-<img src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@1.0.1/docs/imgs/shaw-light.png" style="zoom:80%;" alt="shaw-light" />
-		<img src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@1.0.1/docs/imgs/shaw-dark.png" style="zoom:80%;" alt="shaw-dark" />
-		<img src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@1.0.1/docs/imgs/float-btn.png" style="zoom:100%;border: 1px solid" alt="float-btn" />
+<img src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@0.0.4/docs/imgs/shaw-light.png" style="zoom:80%;" alt="shaw-light" />
+		<img src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@0.0.4/docs/imgs/shaw-dark.png" style="zoom:80%;" alt="shaw-dark" />
+		<img src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@0.0.4/docs/imgs/float-btn.png" style="zoom:100%;border: 1px solid" alt="float-btn" />
