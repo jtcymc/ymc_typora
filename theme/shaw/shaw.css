@@ -1,0 +1,3105 @@
+/*
+ * Copyright (C) 2023 Shaw, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * GitHub XXX
+ */
+/** 本主题基于：
+  * drake-juejin: https://github.com/liangjingkanji/DrakeTyporaTheme
+  * 并参考dyzj-light: https://github.com/muggledy/typora-dyzj-theme/releases/lates
+ */
+
+/* 字体引用 */
+@import "./fonts.css";
+
+html {
+  font-size: var(--text-size);
+}
+html,
+body {
+  background: var(--bg-color);
+}
+body {
+  font-family: "Lora-Regular", "霞鹜文楷", HelveticaNeue, Arial, sans-serif !important;
+  color: var(--text-color);
+  -webkit-font-feature-settings: "liga" on, "calt" on;
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-rendering: optimizeLegibility;
+  letter-spacing: 0;
+  margin: 0;
+  overflow-x: hidden;
+  line-height: var(--text-line-height) !important;
+  box-sizing: border-box;
+}
+
+p {
+  line-height: var(--text-line-height);
+  word-spacing: 0.05rem;
+}
+
+/*code block*/
+.md-fences {
+  font-size: 1rem;
+  font-family: Roboto Mono, Source Sans Pro, Monaco, courier, monospace !important;
+  padding: 0.5rem !important;
+  border-radius: 4px;
+  word-wrap: normal;
+  /* background-color: var(--code-block-bg-color); */
+  /* 背景色 */
+  background-color: var(--md-fences-bg-color) !important;
+  color: var(--code-block-color);
+  border: none;
+  line-height: var(--code-line-height);
+
+  /* line-height: 1.43rem; */
+}
+
+/*inline latex*/
+.MathJax {
+  font-size: 120% !important;
+}
+
+.MathJax text,
+.MathJax use {
+  font-family: var(--latex-font);
+}
+
+/*math-block latex*/
+.md-math-block .MathJax {
+  font-size: 130% !important;
+}
+
+/*mermaid*/
+[mermaid-type="journey"] line {
+  stroke: var(--mermaid-journey-line-color) !important;
+}
+
+[mermaid-type="journey"] .label {
+  color: var(--mermaid-journey-label-color) !important;
+}
+
+[id^="mermaidChart"] .relationshipLabelBox {
+  fill: var(--bg-color) !important;
+  opacity: 1 !important;
+  background-color: var(--bg-color) !important;
+}
+
+[id^="mermaidChart"] .legend {
+  fill: var(--text-color) !important;
+}
+
+[id^="mermaidChart"] g.label {
+  font-size: 1rem !important;
+}
+
+[id^="mermaidChart"] line.divider {
+  stroke: var(--table-border-color) !important;
+}
+
+[id^="mermaidChart"] span.nodeLabel {
+  color: var(--code-block-color) !important;
+  line-height: 1.8rem;
+}
+
+tspan {
+  color: var(--text-color);
+}
+
+[id^="mermaidChart"] .entityLabel {
+  fill: var(--code-block-color) !important;
+}
+
+[id^="mermaidChart"] {
+  fill: var(--text-color) !important;
+}
+
+[id^="mermaidChart"] rect.rect {
+  fill: rgba(175, 255, 212, 0.3) !important;
+}
+
+.md-diagram-panel-preview text.actor > tspan {
+  /*方块文字*/
+  fill: var(--code-block-color) !important;
+  stroke: none !important;
+  font-family: var(--text-font) !important;
+  font-size: 1rem !important;
+}
+
+.md-diagram-panel-preview .actor,
+.md-diagram-panel-preview .entityBox {
+  /*方块*/
+  stroke: var(--table-border-color) !important;
+  fill: var(--code-block-bg-color) !important;
+}
+
+.md-diagram-panel-preview .actor-line {
+  /*竖线*/
+  stroke: var(--text-color) !important;
+  stroke-width: 1px;
+}
+
+.md-diagram-panel-preview .messageLine0 {
+  /*横线*/
+  stroke-width: 1.5;
+  stroke-dasharray: none;
+  stroke: var(--text-color) !important;
+}
+
+.md-diagram-panel-preview .messageLine1 {
+  /*虚线*/
+  stroke-width: 1.5 !important;
+  stroke-dasharray: 2, 2 !important;
+  stroke: var(--text-color) !important;
+}
+
+.md-diagram-panel-preview .messageText {
+  /*描述文字*/
+  fill: var(--text-color) !important;
+  font-family: var(--text-font) !important;
+  font-size: 1rem !important;
+}
+
+.md-diagram-panel-preview .activation0 {
+  /*长方形*/
+  fill: var(--md-diagram-fill-color) !important;
+  stroke: var(--text-color) !important;
+}
+
+.md-diagram-panel-preview .labelText,
+.md-diagram-panel-preview .labelText > tspan {
+  /*循环标记*/
+  fill: var(--code-block-color) !important;
+  font-family: var(--text-font) !important;
+  font-size: 1rem !important;
+  dominant-baseline: unset;
+  alignment-baseline: unset;
+}
+
+.md-diagram-panel-preview .labelBox {
+  /*循环标记背景*/
+  stroke: var(--table-border-color) !important;
+  fill: var(--code-block-bg-color) !important;
+}
+
+.md-diagram-panel-preview .loopLine {
+  /*循环标记虚线*/
+  stroke: var(--text-color) !important;
+}
+
+.md-diagram-panel-preview .loopText,
+.md-diagram-panel-preview .loopText > tspan {
+  /*循环名称*/
+  fill: var(--text-color) !important;
+  font-size: 1rem !important;
+}
+
+.md-diagram-panel-preview .sequenceNumber {
+  /*序号*/
+  fill: var(--bg-color) !important;
+}
+
+pre.md-fences-advanced.md-focus .md-fences-adv-panel {
+  border: none;
+}
+
+.md-diagram-panel-preview .edgePath .path {
+  /*箭头*/
+  stroke: var(--text-color) !important;
+}
+
+.md-diagram-panel-preview .edgeLabel rect {
+  /*条件文字背景*/
+  fill: var(--bg-color) !important;
+}
+
+.md-diagram-panel-preview .edgeLabel span {
+  /*条件文字*/
+  color: var(--text-color);
+}
+
+.md-diagram-panel-preview .node rect,
+.md-diagram-panel-preview .node circle,
+.md-diagram-panel-preview .node ellipse,
+.md-diagram-panel-preview .node polygon,
+.md-diagram-panel-preview .node path {
+  /*形状*/
+  stroke: var(--table-border-color) !important;
+  fill: var(--code-block-bg-color) !important;
+}
+
+#write .md-diagram-panel .md-diagram-panel-preview div {
+  /*形状内文字*/
+  color: var(--code-block-color);
+  font-family: var(--text-font) !important;
+  font-size: 1rem !important;
+}
+
+#write .CodeMirror-wrap .CodeMirror-code pre {
+  padding-left: 12px;
+  font-family: Consolas, "霞鹜文楷";
+  font-size: 0.95em;
+  border-radius: 5em;
+  line-height: var(--code-line-height);
+}
+
+/*code snippet*/
+#write code,
+tt {
+  margin: 0 2px;
+  padding: 1.5px 5px;
+  color: var(--drake-highlight);
+  font-family: "Fira", "霞鹜文楷";
+  background-color: var(--tt-bg-color);
+  font-weight: normal;
+  border-radius: 0.2em;
+  font-size: 0.9rem;
+  /* padding: 0.065em 0.4em; */
+}
+
+#write .CodeMirror-gutters {
+  border-color: var(--codeMirror-gutters-color);
+  border-right: 1.5px solid var(--codeMirror-gutters-br-color);
+}
+
+/*variable*/
+var {
+  color: var(--variable-color);
+  font-weight: bold;
+}
+
+/*raw block*/
+.md-rawblock-control:not(.md-rawblock-tooltip) {
+  border-radius: 2px 0 2px 2px;
+  padding: 0.2rem !important;
+}
+
+.md-rawblock:hover > .md-rawblock-container {
+  background: none;
+}
+
+.md-rawblock-input {
+  font-size: 1rem;
+}
+
+.md-rawblock-tooltip-btn:hover {
+  background: none;
+}
+
+.md-rawblock:hover > .md-rawblock-tooltip {
+  border-radius: 2px 2px 0 0;
+  margin-bottom: 2px !important;
+}
+
+.md-rawblock-tooltip.md-rawblock-control {
+  border-radius: 2px 2px 0 0;
+  color: var(--code-block-color);
+}
+
+.md-rawblock-tooltip-name {
+  color: var(--code-block-color);
+  opacity: 1;
+}
+
+/*quote block*/
+blockquote:before {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 4px;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: var(--blockquote-border-color);
+  border-radius: 2px;
+}
+
+blockquote {
+  color: var(--blockquote-color);
+  border-radius: 2px;
+  padding: 10px 16px;
+  background-color: var(--blockquote-bg-color);
+  position: relative;
+  border-left: none;
+  font-family: "霞鹜文楷";
+}
+
+#write strong {
+  color: var(--strong-color);
+  font-weight: bold;
+}
+
+#write blockquote strong {
+  color: var(--blockquote-strong-color);
+}
+
+/*link*/
+#write a {
+  color: var(--a-color);
+  text-decoration: none;
+}
+
+.on-focus-mode #write a .md-plain,
+.on-focus-mode .md-htmlblock-container a:hover {
+  border-bottom: 0.1rem solid var(--blur-text-color);
+}
+
+[md-inline="link"] a {
+  margin: 0 0.2rem;
+}
+
+a:any-link {
+  color: var(--a-color);
+}
+
+img {
+  border-left: none;
+  border-right: none;
+  vertical-align: baseline;
+  border-radius: 4px;
+}
+
+#write {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 30px 100px;
+}
+
+#typora-source .CodeMirror-lines {
+  max-width: 1200px;
+}
+
+#write > ul:first-child,
+#write > ol:first-child {
+  margin-top: 30px;
+}
+
+body > *:first-child {
+  margin-top: 0 !important;
+}
+
+body > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+#write h1 a,
+#write h2 a,
+#write h3 a,
+#write h4 a,
+#write h5 a,
+#write h6 a {
+  /* font-family: var(--title-font); */
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  line-height: 1.4;
+  cursor: text;
+  color: var(--title-color);
+  font-family: "HarmonyOS";
+  letter-spacing: 2px;
+  /* color:  var(--color-38) !important; */
+}
+
+/* 不建议使用五级、六级标题，所以颜色调浅 */
+#write h6 a,
+h6 {
+  color: var(--a-h6-bg-color) !important;
+}
+
+#write h5 a,
+h5 {
+  color: var(--a-h6-bg-color) !important;
+}
+
+h3.md-focus:before,
+h4.md-focus:before,
+h5.md-focus:before,
+h6.md-focus:before {
+  visibility: hidden;
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 0;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  text-decoration: none !important;
+  border: none !important;
+  color: inherit !important;
+}
+
+h1 tt,
+h1 code,
+h2 tt,
+h2 code,
+h3 tt,
+h3 code,
+h4 tt,
+h4 code,
+h5 tt,
+h5 code,
+h6 tt,
+h6 code {
+  font-size: inherit !important;
+}
+
+h2 a,
+h3 a {
+  color: var(--a-h3-bg-color);
+}
+
+h2 > .md-plain {
+  line-height: 3rem;
+  position: relative;
+  left: -0.5rem;
+}
+
+.on-focus-mode
+  h2.md-end-block.md-heading:not(.md-focus):not(.md-focus-container):after {
+  background-color: var(--blur-text-color) !important;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p,
+blockquote,
+ul,
+ol,
+dl,
+table {
+  margin: var(--p-spacing) 0;
+}
+
+li > ol,
+li > ul {
+  margin: 0 0;
+}
+
+li {
+  margin: 0.5em 0;
+}
+
+/* 列表前符号 */
+::marker,
+li::before {
+  color: var(--marker-li-color);
+  font-family: "HarmonyOS";
+  font-size: var(--text-size);
+}
+
+li.md-focus-container::marker {
+  color: var(--md-focus-container-marker-color) !important;
+  font-family: "HarmonyOS";
+  font-size: var(--text-size);
+}
+
+hr {
+  height: 2px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: var(--horizontal-divider-color);
+  border: 0 none;
+  overflow: hidden;
+  box-sizing: content-box;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+body > h1:first-child + h2 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+body > h3:first-child,
+body > h4:first-child,
+body > h5:first-child,
+body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1,
+a:first-child h2,
+a:first-child h3,
+a:first-child h4,
+a:first-child h5,
+a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1 p,
+h2 p,
+h3 p,
+h4 p,
+h5 p,
+h6 p {
+  margin-top: 0;
+}
+
+li p.first {
+  display: inline-block;
+}
+
+ul,
+ol {
+  padding-inline-start: 2em;
+}
+
+ul:first-child,
+ol:first-child {
+  margin-top: 0;
+}
+
+ul:last-child,
+ol:last-child {
+  margin-bottom: 0;
+}
+
+.ty-table-edit {
+  margin-top: -1rem !important;
+}
+
+#write table {
+  margin-top: 1rem;
+  word-break: initial;
+  background-color: var(--table-bg-color);
+}
+
+table tr {
+  border-top: 0.05em solid var(--table-border-color);
+  margin: 0;
+  padding: 0;
+}
+
+table th {
+  font-weight: bold;
+  border: 0.05em solid var(--table-border-color);
+  border-bottom: 0;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+table td {
+  border: 0.05em solid var(--table-border-color);
+  margin: 0;
+  padding: 6px 13px;
+}
+
+/* 表头 */
+table tr th {
+  border: 1.5px solid var(--table-border-color);
+  font-weight: bolder;
+  border-bottom: 2.5px solid var(--table-border-color);
+  padding: 5px 10px;
+  color: var(--table-header-color);
+  font-family: "HarmonyOS";
+}
+
+table thead {
+  background-color: var(--table-header-bg-color);
+}
+
+table tr:nth-child(2n) {
+  background-color: var(--table-n2-bg-color);
+}
+
+table tr th:first-child,
+table tr td:first-child {
+  margin-top: 0;
+}
+
+table tr th:last-child,
+table tr td:last-child {
+  margin-bottom: 0;
+}
+
+table tr:hover {
+  background-color: var(--tablefocusrow-color);
+}
+
+/* 三线表（自定义需覆盖上述默认表格样式） */
+div[alt="three-table"] table {
+  border-top: 1.5pt solid;
+  border-bottom: 1.5pt solid;
+  font-size: 11pt;
+}
+
+div[alt="three-table"] table tr td,
+div[alt="three-table"] table tr th {
+  border: none;
+}
+
+div[alt="three-table"] table tr,
+div[alt="three-table"] table tr th,
+div[alt="three-table"] table tr:hover {
+  background-color: var(--bg-color);
+}
+
+div[alt="three-table"] table tr th {
+  border-bottom: 0.75pt solid;
+  font-family: 黑体;
+  font-size: 11pt;
+}
+
+/* 控制文本的居中or左or右显示 */
+*[alt="center"] {
+  text-align: center;
+}
+
+*[alt="left"] {
+  text-align: left;
+}
+
+*[alt="right"] {
+  text-align: right;
+}
+
+/* 无表头表格（且调小了格子的padding值） */
+div[alt="notitle-table"] table {
+  font-size: 11pt;
+}
+
+div[alt="notitle-table"] table tr,
+div[alt="notitle-table"] table tr th,
+div[alt="notitle-table"] table tr:hover {
+  background-color: var(--bg-color);
+}
+
+div[alt="notitle-table"] table tr td:hover,
+div[alt="notitle-table"] table tr th:hover {
+  background-color: var(--tablefocusrow-color);
+}
+
+div[alt="notitle-table"] table tr th {
+  font-weight: normal;
+}
+
+div[alt="notitle-table"] table tr th,
+div[alt="notitle-table"] table tr td {
+  padding: 0px 8px;
+}
+
+#write em {
+  padding: 0 5px 0 2px;
+}
+
+/* height light */
+#write mark {
+  border: 0.1em solid var(--height-light-border-color);
+  color: var(--height-light-color);
+  background-color: transparent;
+  padding: 0.1rem 0.5rem;
+  border-radius: 2rem;
+  margin: 0 0.2rem;
+  font-size: 0.95rem;
+}
+
+/*shortcut*/
+kbd {
+  border: 0.1em solid var(--kbd-broder-color);
+  background: transparent;
+  color: var(--text-color);
+  margin: 0 0.4rem;
+  font-family: var(--text-font) !important;
+  font-size: 0.95rem;
+  padding: 0.3em 0.4em;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.3);
+}
+
+#write del {
+  padding: 1px 2px;
+}
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+/* @media print {
+  html {
+    font-size: var(--text-size);
+  }
+
+  table,
+  pre {
+    page-break-inside: avoid;
+  }
+
+  pre {
+    word-wrap: break-word;
+  }
+} */
+
+/*YAML*/
+#write pre.md-meta-block {
+  padding: 1rem;
+  font-size: 1rem;
+  line-height: 1.45;
+  background-color: var(--yaml-bg-color);
+  border: 0;
+  border-radius: 2px;
+  color: var(--yaml-color);
+  margin-top: 0 !important;
+}
+
+.mathjax-block > .code-tooltip {
+  bottom: 0.375rem;
+}
+
+#write > h3.md-focus:before {
+  left: -1.5625rem;
+  top: 0.375rem;
+}
+
+#write > h4.md-focus:before {
+  left: -1.5625rem;
+  top: 0.285714286rem;
+}
+
+#write > h5.md-focus:before {
+  left: -1.5625rem;
+  top: 0.285714286rem;
+}
+
+#write > h6.md-focus:before {
+  left: -1.5625rem;
+  top: 0.285714286rem;
+}
+
+.md-tag {
+  color: inherit;
+}
+
+.md-toc {
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+.typora-quick-open-item {
+  font-size: 1rem !important;
+  height: 50px;
+  padding-left: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#typora-quick-open {
+  box-shadow: 0 0 8px #00000045;
+  padding: 0;
+}
+
+.ty-quick-open-category.ty-has-prev .ty-quick-open-category-title {
+  border-top: none;
+}
+
+#typora-quick-open-input {
+  margin: 8px;
+  box-shadow: none;
+  border-radius: 2px;
+}
+
+#typora-quick-open-input input {
+  font-size: 1rem;
+  box-shadow: none;
+  padding-top: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  line-height: 32px;
+  max-height: 32px;
+  border: none;
+}
+
+.modal-dialog#typora-quick-open {
+  border-radius: 8px;
+}
+
+.ty-quick-open-category-title {
+  padding-left: 8px;
+  color: var(--ty-quick-open-category-title-color);
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+}
+
+.typora-quick-open-item-path {
+  font-size: 0.8rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 1px;
+}
+
+/*search input*/
+.form-control {
+  border: none;
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+#md-searchpanel .btn {
+  border-radius: 2px;
+}
+
+#search-panel-replaceall-btn {
+  padding-right: 5px !important;
+  text-align: center !important;
+}
+
+#search-panel-replace-btn {
+  text-align: center !important;
+}
+
+#md-searchpanel input {
+  background: var(--input-bg-color);
+  border-radius: 2px;
+}
+
+.searchpanel-search-option-btn {
+  border-radius: 2px;
+  border: none;
+  background: transparent;
+  color: var(--text-color);
+}
+
+.searchpanel-search-option-btn.active {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+#md-notification:before {
+  top: 10px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+  border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header,
+.context-menu,
+.megamenu-content,
+footer {
+  font-family: initial;
+}
+
+/*sidebar*/
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state {
+  visibility: visible;
+}
+
+.file-node-content {
+  display: flex;
+  align-items: center;
+}
+
+.file-node-open-state {
+  margin-right: 0.5rem;
+}
+
+.file-node-icon {
+  margin-right: 0.5rem;
+}
+
+#typora-sidebar {
+  font-size: inherit;
+  font-family: var(--title-font);
+}
+
+.sidebar-tabs {
+  border-bottom: none;
+}
+
+.file-list-item-summary,
+.file-list-item-parent-loc,
+.file-list-item-time,
+.file-list-item-summary {
+  font-size: 0.9rem !important;
+  font-family: var(--text-font);
+}
+
+.file-list-item-file-ext-part {
+  display: none;
+}
+
+.outline-item {
+  font-size: 1rem;
+}
+
+/*footnotes tooltip text*/
+.code-tooltip-content .md-plain {
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+.code-tooltip-content code {
+  padding: 0 2px;
+  font-family: inherit;
+  color: var(--footnotes-highlight);
+  background-color: inherit;
+}
+
+.code-tooltip-content a {
+  color: var(--footnotes-highlight);
+}
+
+div.code-tooltip-content {
+  box-shadow: 0 0 8px #00000045;
+  background: var(--footnotes-bg-color);
+}
+
+.CodeMirror-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.file-list-item-summary {
+  font-size: 1em;
+}
+
+.pin-outline #outline-content .outline-active strong,
+.pin-outline .outline-active {
+  font-weight: 500;
+  color: var(--outline-active-color);
+}
+
+.file-list-item.active {
+  border-left: 4px solid var(--drake-accent);
+}
+
+#md-searchpanel .btn:not(.close-btn):hover {
+  box-shadow: none;
+  background: var(--btn-hover-bg-color);
+}
+
+/*checkbox*/
+#write input[type="checkbox"] {
+  opacity: 0;
+  height: 1.6rem;
+  width: 1.6rem;
+  margin-left: -2em;
+  margin-top: 0;
+  top: 0;
+}
+
+#write .ul-list li.md-task-list-item.task-list-done::before {
+  content: "";
+  background: var(--checkbox-checked) 0 0 no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  position: absolute;
+  height: 1.6rem;
+  width: 1.6rem;
+  margin-left: -2em;
+}
+
+#write .ul-list li.md-task-list-item.task-list-not-done::before {
+  content: "";
+  background: var(--checkbox-unchecked) 0 0 no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  position: absolute;
+  height: 1.6rem;
+  width: 1.6rem;
+  margin-left: -2em;
+}
+
+.task-list-item p {
+  line-height: 1.6rem;
+}
+
+.md-task-list-item.task-list-done {
+  text-decoration: line-through;
+  color: var(--md-task-list-item-color);
+}
+
+.md-task-list-item.task-list-done span {
+  color: var(--md-task-list-item-color);
+}
+
+/*insert table*/
+.btn {
+  border-radius: 2px;
+}
+
+.modal-content {
+  border-radius: 8px;
+}
+
+.btn-primary:hover,
+.btn-primary:active {
+  background-color: var(--btn-hover-bg-color);
+  color: var(--drake-highlight);
+}
+
+.btn-primary {
+  background-color: transparent;
+  color: var(--drake-highlight);
+}
+
+.btn-default {
+  background-color: transparent;
+}
+
+.btn:active {
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+#table-insert-col,
+#table-insert-row {
+  background: var(--input-bg-color);
+  border-radius: 2px;
+}
+
+/*preference panel*/
+#megamenu-content {
+  background-image: none !important;
+  background-color: var(--bg-color);
+}
+
+#top-titlebar {
+  height: inherit;
+  background-color: var(--bg-color);
+}
+
+#megamenu-menu-sidebar {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.long-btn {
+  width: inherit;
+  min-width: 300px;
+  border: 1px solid var(--text-color);
+  border-radius: 6px;
+}
+
+.megamenu-menu-panel h1 {
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+.megamenu-menu-panel h1,
+.megamenu-menu-panel h2 {
+  font-weight: normal;
+}
+
+#recent-file-panel-search-input {
+  height: 45px;
+  border: none;
+  border-bottom: 1px solid var(--text-color);
+  padding-left: 8px;
+}
+
+#recent-file-panel-search-input::placeholder {
+  color: var(--text-color);
+  opacity: 0.5;
+}
+
+.megamenu-menu-header {
+  border-bottom: none;
+}
+
+#recent-file-panel-action-btn {
+  background: none;
+  border: none;
+}
+
+#recent-file-panel-action-btn-container {
+  float: none;
+  display: inline-block;
+}
+
+#top-titlebar .toolbar-icon.btn.hover,
+#top-titlebar .toolbar-icon.btn:hover {
+  background-color: var(--btn-hover-bg-color);
+  color: var(--text-color);
+}
+
+.megamenu-menu-panel .btn:hover {
+  background-color: var(--btn-hover-bg-color) !important;
+  color: var(--text-color);
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1),
+.megamenu-menu-panel table thead,
+.megamenu-menu-panel table tr {
+  background-color: transparent;
+}
+
+.megamenu-menu-panel table {
+  font-weight: normal;
+}
+
+#megamenu-back-btn {
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+}
+
+.megamenu-menu-header #megamenu-menu-header-title {
+  color: var(--text-color);
+}
+
+header,
+.context-menu,
+.megamenu-content,
+footer {
+  font-family: var(--text-font);
+}
+
+.ty-preferences select {
+  padding-left: 2px;
+}
+
+.preference-item-hint {
+  font-size: var(--text-size);
+}
+
+a.ty-link {
+  color: var(--a-color);
+  margin: 0 0.2rem;
+}
+
+/**
+      code render
+      Name: IntelliJ IDEA darcula theme
+      From IntelliJ IDEA by JetBrains
+   */
+.cm-s-inner.CodeMirror {
+  background: none;
+  color: var(--code-block-color);
+}
+
+.cm-s-inner span.cm-meta {
+  color: var(--color-15);
+}
+
+.cm-s-inner span.cm-number {
+  color: var(--color-16);
+}
+
+/* .cm-s-inner span.cm-keyword {
+  color: var(--color-17);
+} */
+
+/* .cm-s-inner span.cm-def {
+  color: var(--color-18);
+} */
+
+:is(#write, #typora-source)
+  .cm-s-inner
+  .cm-variable
+  .cm-s-inner
+  span.cm-variable {
+  color: var(--cyan-600);
+}
+
+.cm-s-inner span.cm-variable-2 {
+  color: var(--code-block-color);
+}
+
+/* .cm-s-inner span.cm-variable-3 {
+  color: var(--color-19);
+} */
+
+.cm-s-inner span.cm-type {
+  color: var(--color-20);
+}
+
+.cm-s-inner span.cm-property {
+  color: var(--color-21);
+}
+
+.cm-s-inner span.cm-operator {
+  color: var(--code-block-color);
+}
+
+.cm-s-inner span.cm-string {
+  color: var(--color-22);
+}
+
+.cm-s-inner span.cm-string-2 {
+  color: var(--color-22);
+}
+
+.cm-s-inner span.cm-comment {
+  color: var(--color-23);
+}
+
+.cm-s-inner span.cm-link {
+  color: var(--color-17);
+}
+
+.cm-s-inner span.cm-atom {
+  color: var(--color-17);
+}
+
+.cm-s-inner span.cm-error {
+  color: var(--color-24);
+}
+
+.cm-s-inner span.cm-tag {
+  color: var(--color-25);
+}
+
+.cm-s-inner span.cm-quote {
+  color: var(--color-26);
+}
+
+.cm-s-inner span.cm-attribute {
+  color: var(--color-19);
+}
+
+.cm-s-inner span.cm-qualifier {
+  color: var(--color-22);
+}
+
+.cm-s-inner span.cm-bracket {
+  color: var(--color-25);
+}
+
+.cm-s-inner span.cm-builtin {
+  color: var(--color-27);
+}
+
+.cm-s-inner span.cm-special {
+  color: var(--color-27);
+}
+
+.cm-s-inner span.cm-matchhighlight {
+  color: var(--bg-color);
+  background-color: rgba(50, 89, 48, 0.7);
+  font-weight: normal;
+}
+
+.cm-s-inner span.cm-searching {
+  color: var(--bg-color);
+  background-color: rgba(61, 115, 59, 0.7);
+  font-weight: normal;
+}
+
+.cm-s-inner .CodeMirror-gutters {
+  border-right: 1px solid rgba(120, 120, 120, 0.3);
+  background: var(--code-block-bg-color);
+}
+
+.cm-s-inner .CodeMirror-linenumber {
+  color: var(--codeblocknum-color);
+}
+
+.cm-s-inner .CodeMirror-matchingbracket {
+  background-color: var(--color-29);
+  color: var(--code-mirror-matchingbracket-color) !important;
+}
+
+.cm-s-inner .CodeMirror-selected {
+  background: var(--color-31) !important;
+}
+
+.cm-s-inner .CodeMirror-selectedtext {
+  background: var(--color-31) !important;
+}
+
+/* 选中行高亮 */
+.md-fences:not(.md-focus) .CodeMirror-code > *:hover {
+  background-color: var(--codeblockline-color);
+}
+
+.md-fences.md-focus .CodeMirror-code > div.CodeMirror-activeline {
+  background-color: var(--codeblockline-color);
+}
+
+.cm-s-typora-default .CodeMirror-selectedtext {
+  background: var(--select-text-bg-color) !important;
+}
+
+.cm-overlay.CodeMirror-selectedtext {
+  background: var(--select-text-bg-color) !important;
+}
+
+/* 代码块光标线条宽度、颜色 */
+#write .CodeMirror-cursors .CodeMirror-cursor {
+  border-left: 2px solid var(--focus-color);
+}
+
+/*************************************************** 其它样式配置 /****************************************************/
+
+/* 右键菜单 */
+.context-menu.dropdown-menu > li > a {
+  padding: 4px 20px;
+  color: inherit;
+  cursor: default;
+  border: none !important;
+  font-family: "Fira", "霞鹜文楷";
+  font-size: 13px;
+  color: var(--color-32) !important;
+}
+
+/* 右键快捷键样式 */
+.ty-menu-shortcut {
+  float: right;
+  line-height: inherit;
+  font-size: 0.9em;
+  font-family: "Fira";
+  opacity: 0.7;
+}
+
+/*图片圆角*/
+img {
+  border-radius: 4px;
+  border: none;
+}
+
+/* 图片链接文字 */
+.md-image > .md-meta {
+  border-radius: 3px;
+  font-family: "Fira", "霞鹜文楷";
+  padding: 2px 0 0 4px;
+  font-size: 0.8em;
+  color: inherit;
+}
+
+#write {
+  counter-increment: tableHead 0 imgNum 0;
+}
+
+/* 表格自动编号 */
+#write figure::after {
+  counter-increment: tableHead;
+  content: "表" counter(tableHead) attr(alt) !important;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  margin-top: 8px !important;
+  font-size: small;
+}
+
+/* 以下是自定义内容 */
+/* 图片自动编号 */
+/* 图片自动编号 */
+
+/* #write p > .md-image::after {
+    counter-increment: imgNum;
+    content: "图" counter(imgNum) attr(alt) !important;
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    margin-top: 8px !important;
+    font-size: small;
+  } */
+
+/* 实现图释 */
+#write span[class="CustomImg"]:has(img)::after {
+  counter-increment: imgNum;
+  content: "图" counter(imgNum) ". " attr(alt) !important;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  margin-top: 8px !important;
+  font-size: small;
+}
+/* 导出时才会展示，避免因img标签导致的不生效问题 */
+#write p:has(img):not(.md-end-block)::after {
+  counter-increment: imgNum;
+  content: "图" counter(imgNum) attr(alt) !important;
+  text-align: center;
+  width: 100%;
+  margin-top: 8px !important;
+  font-size: small;
+  display: inline-block;
+  /* display: none; */
+  /* @media print{
+      #write p:has(img)::after{
+        display: inline-block !important;
+
+      }
+    } */
+}
+
+/* 图释 */
+div[alt="fig"] {
+  font-size: small;
+  text-align: center;
+  margin-top: -10px !important;
+}
+
+/* 图片报错提示 */
+.md-img-error > .md-meta:first-of-type:before {
+  color: var(--color-33);
+  font-size: 1.6rem;
+}
+
+/* .md-image:not(.md-image-multi-line)>.md-meta, */
+.md-img-error > .md-meta {
+  display: inline;
+  padding-bottom: 1px;
+  border-bottom: 2.5px red solid;
+  border-radius: 0px !important;
+}
+
+/* ————————————————————————————————————————————— 提示块样式——————————————————————————————————————— */
+
+blockquote > h3:first-child,
+blockquote > h4:first-child,
+blockquote > h5:first-child,
+blockquote > h6:first-child {
+  font-weight: 700;
+  font-size: var(--text-size) !important;
+  margin: -10px -16px -5px -16px !important;
+  padding: 12px 12px 0px !important;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 1px;
+}
+
+blockquote > h3:first-child {
+  color: var(--color-34) !important;
+}
+
+blockquote > h3:first-child::before,
+blockquote > h3.md-focus:before {
+  background-image: url("./Icon_font/警告.svg");
+  vertical-align: middle;
+  content: " ";
+  width: 20px;
+  height: 19px;
+  display: inline-block;
+  margin: 0 4px;
+  margin-left: 1px;
+  position: initial;
+  background-repeat: no-repeat;
+}
+
+blockquote > h4:first-child {
+  color: var(--color-35) !important;
+}
+
+blockquote > h4:first-child::before,
+blockquote > h4.md-focus:before {
+  background-image: url("./Icon_font/参考.svg");
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  content: " ";
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin: 0 4px;
+  margin-left: 1px;
+  position: initial;
+}
+
+blockquote > h5:first-child {
+  color: var(--color-36) !important;
+}
+
+blockquote > h5:first-child::before,
+blockquote > h5.md-focus:before {
+  background-image: url("./Icon_font/想法.svg");
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  content: " ";
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  margin: 0 4px;
+  margin-left: 0;
+  position: initial;
+}
+
+blockquote > h6:first-child {
+  color: var(--color-37) !important;
+}
+
+blockquote > h6:first-child::before,
+blockquote > h6.md-focus:before {
+  background-image: url("./Icon_font/其他.svg");
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  content: " ";
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  margin: 0 4px;
+  position: initial;
+}
+
+blockquote > h3 > .md-plain::before,
+blockquote > h4 > .md-plain::before,
+blockquote > h5 > .md-plain::before,
+blockquote > h6 > .md-plain::before {
+  display: none;
+}
+
+/* —————————————————————————————————————————————链接设置———————————————————————————————————————————— */
+
+#write a {
+  text-decoration: none;
+  /* color:  var(--md-focus-container-marker-color); */
+  color: var(--color-38);
+  font-weight: normal;
+  /* border-bottom: 1px dashed  var(--md-focus-container-marker-color); */
+  border-bottom: 1px dashed var(--color-38);
+  cursor: pointer !important;
+}
+
+a,
+a:hover,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+/*已被访问过的链接*/
+a:visited {
+  color: var(--color-39);
+}
+
+/*鼠标悬浮在上的链接*/
+#write a:hover {
+  color: var(--md-focus-container-marker-color);
+  border-bottom: 1px solid var(--md-focus-container-marker-color);
+}
+
+/*鼠标点中激活链接*/
+a:active {
+  color: var(--color-39);
+}
+
+#write a[href*="http"]::after {
+  display: inline-block;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: 0.8em 0.8em;
+  /* top: 0.1em; */
+  width: 0.8em;
+  height: 0.8em;
+  content: " ";
+  background-image: url("./Icon_font/链接.svg");
+}
+
+#write a[href*="http"]:hover::after {
+  content: "";
+  background-image: url("./Icon_font/链接.svg");
+}
+
+#write a[href*="#"]:has(span)::after {
+  display: inline-block;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: 0.8em 0.8em;
+  /* top: 0.1em; */
+  width: 0.8em;
+  height: 0.8em;
+  content: " ";
+  background-image: url("./Icon_font/火箭.svg");
+}
+#write a[href*="#"]:hover::after {
+  content: "";
+  background-image: url("./Icon_font/火箭.svg");
+}
+
+/*下划线*/
+u {
+  background-color: inherit;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1.6px solid var(--underline-color);
+  padding-bottom: 1px;
+}
+
+/* 时间轴（来自Volantis主题） */
+
+div[alt="timeline"] {
+  margin-top: 8px;
+  margin-left: 8px;
+}
+
+div[alt="timenode"] {
+  position: relative;
+}
+
+div[alt="timenode"]:after,
+div[alt="timenode"]:before {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  background: rgba(68, 215, 182, 0.5);
+  width: 2px;
+  left: 7px;
+}
+
+div[alt="timenode"]:before {
+  top: 0px;
+  height: 6px;
+}
+
+div[alt="timenode"] div[alt="body"],
+div[alt="timenode"] div[alt="meta"] {
+  max-width: calc(100% - 24px);
+}
+
+div[alt="timenode"] div[alt="meta"] {
+  position: relative;
+  color: var(--para-color);
+  line-height: 32px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin: 0 0 0 24px;
+}
+
+div[alt="timenode"] div[alt="meta"]:after,
+div[alt="timenode"] div[alt="meta"]:before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  z-index: 2;
+  left: -24px;
+}
+
+div[alt="timenode"] div[alt="meta"]:before {
+  background: rgba(68, 215, 182, 0.5);
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+}
+
+div[alt="timenode"] div[alt="meta"]:after {
+  background: var(--timenode-meta-color);
+  margin-left: 2px;
+  margin-top: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  -webkit-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -o-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  transform: scale(0.5);
+}
+
+div[alt="timenode"] div[alt="body"] {
+  margin: 4px 0 10px 24px;
+  padding: 10px;
+  border-radius: 12px;
+  background: var(--timebodybg-color);
+  display: inline-block;
+  font-size: 0.9rem;
+}
+
+div[alt="timenode"]:not(:last-child):after {
+  top: 26px;
+  height: calc(100% - 26px);
+}
+
+div[alt="timenode"]:last-child:after {
+  top: 26px;
+  height: calc(100% - 30px);
+}
+
+div[alt="timenode"]:hover div[alt="meta"] {
+  color: var(--para-color);
+}
+
+div[alt="timenode"]:hover div[alt="meta"]:before {
+  background: rgba(255, 87, 34, 0.5);
+}
+
+div[alt="timenode"]:hover div[alt="meta"]:after {
+  background: var(--timenode-bg-color);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+/* 特殊字体颜色特效 */
+
+/** 彩虹变换字体特效（来自黑石博客） **/
+
+@-webkit-keyframes rainbowan {
+  to {
+    background-position: -2000vw;
+  }
+}
+
+@keyframes rainbowan {
+  to {
+    background-position: -2000vw;
+  }
+}
+
+span[alt="rainbow"],
+span[alt="rainbow"] * {
+  padding-top: 3px;
+  background-image: linear-gradient(
+    to left,
+    orangered,
+    orange,
+    gold,
+    lightgreen,
+    cyan,
+    dodgerblue,
+    mediumpurple,
+    hotpink,
+    orangered
+  );
+  background-size: 110vw;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-animation: rainbowan 60s linear infinite;
+  animation: rainbowan 60s linear infinite;
+}
+
+span[alt="tag"] {
+  line-height: 85%;
+  font-size: 75%;
+  color: var(--color-45);
+}
+
+span[alt="tag"]::before {
+  background-image: url("./Icon_font/标签.svg");
+  vertical-align: middle;
+  content: " ";
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  margin: 0 2px;
+  margin-left: 1px;
+  position: initial;
+  background-repeat: no-repeat;
+}
+
+/** 小标签 **/
+font {
+  display: inline;
+  padding: 0.2em 0.6em;
+  font-size: 90%;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--bg-color);
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.1rem;
+  border-radius: 6px;
+  background-color: var(--spannote-color);
+}
+
+font[title="red"] {
+  background-color: var(--color-41);
+}
+
+font[title="blue"] {
+  background-color: var(--color-42);
+}
+
+font[title="yellow"] {
+  background-color: var(--color-43);
+}
+
+font[title="green"] {
+  background-color: var(--color-44);
+}
+
+font[title="gray"] {
+  background-color: var(--color-45);
+}
+
+/** 强调型文本 **/
+
+span[alt="emp"] {
+  border-bottom: 4px dotted var(--emptext-color);
+}
+
+span[alt="underline"] {
+  border-bottom: 2px solid var(--emptext-color);
+}
+
+span[alt="wavy"] {
+  text-decoration-style: wavy;
+  text-decoration-line: underline;
+  text-decoration-color: var(--emptext-color);
+}
+span[alt="star"] {
+  vertical-align: bottom;
+  position: absolute;
+  right: calc(100% + 1px);
+  bottom: 0;
+  font-weight: bolder !important;
+  border: 0;
+  border-radius: 0;
+  left: auto;
+  float: left;
+  padding: 0;
+  top: -10px;
+  font-size: 10px !important;
+}
+
+/* 有序、无序列表 */
+/** 有序、无序列表，来自Butterfly主题 **/
+
+#write ul li,
+#write ol li,
+#write .ul .li,
+#write .ol .li {
+  list-style-type: none;
+}
+
+/* 无序列表竖线 */
+ul ul {
+  position: relative;
+}
+
+ul ul::before {
+  content: "";
+  border-left: 1.5px solid rgb(129, 178, 154, 0.3);
+  position: absolute;
+  left: -13.5px;
+  top: -17px;
+  bottom: 5px;
+}
+
+#write ul > li:not(.tab):before,
+#write .ul > .li:not(.tab):before {
+  margin-left: -22px;
+  margin-top: 10px;
+  width: 0.62em;
+  height: 0.62em;
+  border: 0.1em solid var(--ulol-color);
+  border-radius: 0.31em;
+  background: 0 0;
+  content: "";
+  line-height: 0.42em;
+}
+
+#write ol li:before,
+#write ul li:before,
+#write .ol .li:before,
+#write .ul .li:before {
+  position: absolute;
+  background: var(--ulol-color);
+  color: var(--olfore-color);
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+#write ol li:first-child,
+#write .ol .li:first-child {
+  /* https://www.w3school.com.cn/cssref/pr_gen_counter-increment.asp */
+  counter-reset: li;
+}
+
+#write ol li:hover:before,
+#write ul li:hover:before,
+#write .ol .li:hover:before,
+#write .ul .li:hover:before {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+#write ul > li:not(.tab):hover:before,
+#write .ul > .li:not(.tab):hover:before {
+  border-color: var(--focus-color);
+}
+
+#write ol > li:before,
+#write .ol > .li:before {
+  margin-top: 6px;
+  margin-left: -25px;
+  width: 1.65em;
+  height: 1.65em;
+  border-radius: 0.825em;
+  content: counter(li);
+  counter-increment: li;
+  text-align: center;
+  font-size: 0.65em;
+  line-height: 1.7em;
+}
+
+/* 侧边栏 */
+
+#typora-sidebar {
+  background-color: var(--sidebarbg-color);
+}
+
+.file-list-item:hover,
+.file-list-item.active {
+  background-color: var(--sidelist-selected-color);
+}
+
+.file-node-content,
+.file-tree-node.active .file-node-content {
+  color: var(--para-color);
+}
+
+.file-tree-node.active > .file-node-background {
+  background-color: var(--sidelist-selected-color);
+}
+
+.file-node-content:hover .file-node-icon {
+  color: var(--titlebefore-color);
+}
+
+.file-node-content:hover {
+  cursor: pointer;
+  color: var(--titlebefore-color) !important;
+}
+
+.outline-item:hover {
+  color: var(--titlebefore-color) !important;
+  background-color: var(--sidelist-selected-color);
+}
+
+/* ————————————————————————————————————————————脚注设置—————————————————————————————————————————————*/
+/* 正文脚注 */
+#write .md-footnote {
+  color: var(--color-46);
+  font-family: "RobotoMono", "霞鹜文楷" !important;
+  font-size: 0.6rem;
+}
+
+/* 调整脚注位置 */
+sup {
+  top: -0.9em;
+}
+
+/* 脚注内容 */
+.footnotes {
+  font-size: 0.8rem;
+  font-family: "RobotoMono", "霞鹜文楷" !important;
+  color: var(--color-47);
+}
+
+#write sup.md-footnote a {
+  color: inherit !important;
+  border-bottom: none !important;
+  padding: 1px;
+  background-color: inherit;
+}
+
+.reversefootnote {
+  border: none !important;
+  color: var(--color-48) !important;
+}
+
+/* 脚注内容尾部符号样式 */
+.md-reverse-footnote-area a {
+  text-decoration: underline !important;
+  padding: 0 2px;
+  border-bottom: none !important;
+}
+
+.md-reverse-footnote-area a:hover {
+  text-decoration: none !important;
+  border-radius: 4px;
+  padding: 0 2px;
+  background-color: var(--color-49);
+  color: var(--bg-color) !important;
+  cursor: pointer;
+  border-bottom: none !important;
+}
+
+#write.footnotes:first-child {
+  background-color: red;
+}
+
+/* 行间公式 */
+mjx-container[jax="SVG"] {
+  direction: ltr;
+  margin: 0 !important;
+  padding: 0;
+}
+
+/* 参考链接样式修改（隐藏链接部分，只显示标题） */
+cm-variable-3 .footnotes.md-def-link .md-def-split,
+.footnotes .md-def-url {
+  display: none;
+}
+
+.footnotes.md-def-link .md-def-name,
+.footnotes .md-def-title {
+  display: inline;
+}
+
+.footnotes {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+/* 代码块 */
+
+/* 关键字 */
+.cm-s-inner .cm-keyword {
+  color: var(--code-bolck-keys-color);
+}
+
+/* 运算符 */
+.cm-s-inner .cm-operator {
+  color: var(--code-bolck-def-color);
+}
+
+/* 被使用的形参 */
+.cm-s-inner .cm-variable-2 {
+  color: var(--cm-variable-color);
+}
+
+/* 形参,类型 */
+.cm-s-inner .cm-variable-3 {
+  color: var(--color-52);
+}
+
+/* 被调用的属性 */
+.cm-s-inner .cm-builtin {
+  color: var(--color-53);
+}
+
+/* css属性值，布尔值等等 */
+.cm-s-inner .cm-atom {
+  color: var(--color-54);
+}
+
+/* 数字 */
+.cm-s-inner .cm-number {
+  color: var(--color-55);
+}
+
+/* 变量名 */
+.cm-s-inner .cm-def {
+  color: var(--code-bolck-def-color);
+}
+
+/* 字符串 */
+.cm-s-inner .cm-string {
+  color: var(--color-57);
+}
+
+/* 正则表达式 */
+.cm-s-inner .cm-string-2 {
+  color: var(--cm-variable-color);
+}
+
+/* 注释 */
+.cm-s-inner .cm-comment {
+  color: var(--color-58);
+}
+
+/* 被使用的变量名 */
+.cm-s-inner .cm-variable {
+  color: var(--color-59);
+}
+
+/* 标签名 */
+.cm-s-inner .cm-tag {
+  color: var(--cm-variable-color);
+}
+
+/* 省略号,注解等 */
+.cm-s-inner .cm-meta {
+  color: var(--color-46);
+}
+
+/* 属性 */
+.cm-s-inner .cm-attribute {
+  color: var(--color-60);
+}
+
+/* 被调用的方法 */
+.cm-s-inner .cm-property {
+  color: var(--color-61);
+}
+
+/* css class */
+.cm-s-inner .cm-qualifier {
+  color: var(--color-53);
+}
+
+/* 形参,类型 */
+/* .cm-s-inner .cm-variable-3 {
+  color: var(--color-62);
+} */
+
+.cm-s-inner .cm-tag {
+  color: rgba(255, 83, 112, 1);
+}
+
+/* 错误 */
+.cm-s-inner .cm-error {
+  color: rgba(255, 255, 255, 1);
+  background-color: var(--color-63);
+}
+
+.cm-s-inner .CodeMirror-matchingbracket {
+  text-decoration: underline;
+  color: white !important;
+}
+
+.CodeMirror-gutter-wrapper {
+  position: absolute !important;
+  left: -6ch;
+  min-width: 4ch !important;
+  text-align: right;
+  font-size: 0.8rem;
+  margin-top: 0.1rem;
+  display: inline-block;
+  opacity: 0.6;
+}
+
+.md-fences {
+  background-color: var(--color-64);
+  color: rgb(44, 116, 199);
+  border: none;
+}
+
+.cm-s-inner .cm-link,
+.cm-s-inner.cm-link {
+  color: var(--color-65);
+}
+
+.cm-s-inner .cm-string {
+  color: var(--color-66);
+}
+
+.md-fences .code-tooltip {
+  background-color: var(--bg-color);
+}
+
+/* diff 样式，仿GitHub */
+.cm-negative {
+  color: var(--color-67);
+  background-color: var(--color-68);
+}
+
+.cm-positive {
+  color: var(--color-69);
+  background-color: var(--color-70);
+}
+
+/* 自动编号 */
+/* 以下开始为自动编号 */
+/* ———————————————————————————————————————————————————标题等级提示—————————————————————————————————————————————————————*/
+
+#write h2::after,
+h3::after,
+h4::after,
+h5::after,
+h6::after {
+  vertical-align: bottom;
+  position: absolute;
+  right: calc(100% + 1px);
+  bottom: 0;
+  color: var(--head-after-corlor) !important;
+  font-weight: bolder !important;
+  border: 0;
+  border-radius: 0;
+  left: auto;
+  float: left;
+  padding: 0;
+  font-family: "HarmonyOS";
+  font-size: 10px !important;
+}
+
+#write h2::after {
+  content: "#2";
+  top: -10px;
+}
+
+h3:not(blockquote > h3)::after,
+h3.md-focus:after {
+  content: "#3";
+  top: -5px;
+}
+
+h4:not(blockquote > h4)::after,
+h4.md-focus:after {
+  content: "#4";
+  top: -5px;
+}
+
+h5:not(blockquote > h5)::after,
+h5.md-focus:after {
+  content: "#5";
+  top: -5px;
+}
+
+h6:not(blockquote > h6)::after,
+h6.md-focus:after {
+  content: "#6";
+  top: -5px;
+}
+
+h3.md-focus:after,
+h4.md-focus:after,
+h5.md-focus:after,
+h6.md-focus:after {
+  line-height: 1.3;
+  border: none;
+  margin: 0;
+  padding: 0;
+  left: auto;
+}
+
+/* 二级标题样式一 */
+#write h2 span {
+  font-weight: bold;
+  padding: 0px 5px 0px;
+  border-radius: 4px;
+}
+
+#write h2:after,
+h2:hover a.anchor::after {
+  display: inline-block;
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  top: auto;
+  background-image: linear-gradient(
+    to right,
+    var(--titlebefore-color) 20%,
+    var(--h2-before-color) 100%
+  );
+  left: 0;
+  right: 0;
+  height: 2px;
+  width: 100%;
+}
+
+#write h2 a,
+#write h2 a:hover {
+  border: none;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin: 35px 0 15px;
+  padding-bottom: 10px;
+}
+
+/* 标题为网址时，样式修改 */
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+  text-decoration: none !important;
+  border: none !important;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  text-decoration: none !important;
+  border: none !important;
+  color: inherit !important;
+}
+
+#write {
+  counter-reset: inner-h2 inner-h3 inner-h4 inner-h5 inner-h6 inner-h7 !important;
+  /*修复缺失上级标题时无法递增*/
+}
+
+/* 编辑器内标题-重置 */
+#write h1 {
+  counter-reset: inner-h2;
+}
+
+#write h2 {
+  counter-reset: inner-h3;
+}
+
+#write h3 {
+  counter-reset: inner-h4;
+}
+
+#write h4 {
+  counter-reset: inner-h5;
+}
+
+#write h5 {
+  counter-reset: inner-h6;
+}
+
+#write h6 {
+  counter-reset: inner-h7;
+}
+
+/* 编辑器内标题-显示 */
+#write h2:not(blockquote > h2):before {
+  counter-increment: inner-h2;
+  content: counter(inner-h2, cjk-ideographic) "、";
+}
+
+#write h3:not(blockquote > h3):before {
+  counter-increment: inner-h3;
+  content: counter(inner-h2, decimal) "." counter(inner-h3, decimal) " ";
+}
+
+#write h4:not(blockquote > h4):before {
+  counter-increment: inner-h4;
+  content: counter(inner-h2, decimal) "." counter(inner-h3, decimal) "."
+    counter(inner-h4, decimal) " ";
+}
+
+#write h5:not(blockquote > h5):before {
+  counter-increment: inner-h5;
+  content: counter(inner-h2, decimal) "." counter(inner-h3, decimal) "."
+    counter(inner-h4, decimal) "." counter(inner-h5, decimal) " ";
+}
+
+#write h6:not(blockquote > h6):before {
+  counter-increment: inner-h6;
+  content: counter(inner-h2, decimal) "." counter(inner-h3, decimal) "."
+    counter(inner-h4, decimal) "." counter(inner-h5, decimal) "."
+    counter(inner-h6, decimal) " ";
+}
+
+body[export-type="pdf"] #write h2:not(blockquote > h2):before,
+body[export-type="pdf"] #write h3:not(blockquote > h3):before,
+body[export-type="pdf"] #write h4:not(blockquote > h4):before,
+body[export-type="pdf"] #write h5:not(blockquote > h5):before,
+body[export-type="pdf"] #write h6:not(blockquote > h6):before {
+  content: "";
+}
+
+/* 目录标题-重置 */
+
+span.md-toc-item.md-toc-h1 a.md-toc-inner span {
+  border-left: 3px transparent solid;
+}
+
+.md-toc {
+  margin-top: 0.5em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  page-break-after: always;
+}
+
+.md-toc::before {
+  display: inline-block;
+  content: "目录";
+  font-family: var(--text-font);
+  font-size: 1.8rem;
+  font-weight: bolder;
+  line-height: 2;
+  padding: 0 2px;
+  border-bottom: 2px solid var(--titlebefore-color);
+  margin-left: 30px;
+  width: 100%;
+}
+
+.md-toc-h1 {
+  font-family: var(--text-font);
+  font-weight: bolder;
+}
+
+.md-toc-h2,
+.md-toc-h3,
+.md-toc-h4,
+.md-toc-h5,
+.md-toc-h6 {
+  font-family: var(--text-font);
+}
+
+.md-toc-h2:before,
+.md-toc-h3:before,
+.md-toc-h4:before,
+.md-toc-h5:before,
+.md-toc-h6:before {
+  font-family: var(--text-font);
+}
+
+#write .md-toc-h1 .md-toc-inner,
+#write .md-toc-h2 .md-toc-inner,
+#write .md-toc-h3 .md-toc-inner,
+#write .md-toc-h4 .md-toc-inner,
+#write .md-toc-h5 .md-toc-inner,
+#write .md-toc-h6 .md-toc-inner,
+#write .md-toc-h1:hover .md-toc-inner,
+#write .md-toc-h2:hover .md-toc-inner,
+#write .md-toc-h3:hover .md-toc-inner,
+#write .md-toc-h4:hover .md-toc-inner,
+#write .md-toc-h5:hover .md-toc-inner,
+#write .md-toc-h6:hover .md-toc-inner {
+  color: var(--a-color);
+  text-decoration: none;
+  border: none;
+  border-right: 300px solid transparent;
+  font-weight: normal !important;
+}
+
+#write .md-toc-h1 .md-toc-inner,
+#write .md-toc-h1:hover .md-toc-inner {
+  font-size: 1.05rem;
+  color: var(--color-32) !important;
+  font-weight: bolder !important;
+}
+
+/* 悬浮底色 */
+.md-toc-h1:hover,
+.md-toc-h2:hover,
+.md-toc-h3:hover,
+.md-toc-h4:hover,
+.md-toc-h5:hover,
+.md-toc-h6:hover {
+  background-color: rgb(129, 178, 154, 0.2);
+  border-radius: 5px;
+}
+
+.md-toc-h2,
+.md-toc-h3,
+.md-toc-h4,
+.md-toc-h5,
+.md-toc-h6 {
+  font-size: 1rem;
+  font-family: var(--text-font);
+}
+
+/* 第一个一级标题取消 margin */
+.md-toc-content .md-toc-h1:first-child {
+  margin-top: -10px;
+  display: none;
+}
+
+.md-toc-h1 {
+  margin-top: 10px;
+}
+
+.md-toc-h1 .md-toc-inner {
+  margin-left: 0em;
+}
+
+.md-toc-h2 .md-toc-inner {
+  margin-left: 0.5em;
+}
+
+.md-toc-h3 .md-toc-inner {
+  margin-left: 2.5em;
+}
+
+.md-toc-h4 .md-toc-inner {
+  margin-left: 3.9em;
+}
+
+.md-toc-h5 .md-toc-inner {
+  margin-left: 5.9em;
+}
+
+.md-toc-h6 .md-toc-inner {
+  margin-left: 7.2em;
+}
+
+.md-toc-content {
+  margin-left: 8em;
+  counter-reset: md-toc-h2 md-toc-h3 md-toc-h4 md-toc-h5 md-toc-h6;
+  /*修复缺失上级标题时无法递增*/
+  page-break-after: always;
+}
+
+.md-toc-content .md-toc-h1 {
+  counter-reset: md-toc-h2;
+}
+
+.md-toc-content .md-toc-h2 {
+  counter-reset: md-toc-h3;
+}
+
+.md-toc-content .md-toc-h3 {
+  counter-reset: md-toc-h4;
+}
+
+.md-toc-content .md-toc-h4 {
+  counter-reset: md-toc-h5;
+}
+
+.md-toc-content .md-toc-h5 {
+  counter-reset: md-toc-h6;
+}
+
+/* 目录标题-显示*/
+.md-toc-content .md-toc-h2 .md-toc-inner:before {
+  counter-increment: md-toc-h2;
+  content: counter(md-toc-h2, cjk-ideographic) "、";
+}
+
+.md-toc-content .md-toc-h3 .md-toc-inner:before {
+  counter-increment: md-toc-h3;
+  content: counter(md-toc-h2, decimal) "." counter(md-toc-h3, decimal) " ";
+}
+
+.md-toc-content .md-toc-h4 .md-toc-inner:before {
+  counter-increment: md-toc-h4;
+  content: counter(md-toc-h2, decimal) "." counter(md-toc-h3, decimal) "."
+    counter(md-toc-h4, decimal) " ";
+}
+
+.md-toc-content .md-toc-h5 .md-toc-inner:before {
+  counter-increment: md-toc-h5;
+  content: counter(md-toc-h2, decimal) "." counter(md-toc-h3, decimal) "."
+    counter(md-toc-h4, decimal) "." counter(md-toc-h5, decimal) " ";
+}
+.md-toc-content .md-toc-h6 .md-toc-inner:before {
+  counter-increment: md-toc-h6;
+  content: counter(md-toc-h2, decimal) "." counter(md-toc-h3, decimal) "."
+    counter(md-toc-h4, decimal) "." counter(md-toc-h5, decimal) "."
+    counter(md-toc-h6, decimal) " ";
+}
+
+/* 侧边栏标题自动编号 */
+/* 大纲标题 -重置*/
+
+.outline-h1 {
+  counter-reset: outline-h2;
+}
+
+.outline-h2 {
+  counter-reset: outline-h3;
+}
+
+.outline-h3 {
+  counter-reset: outline-h4;
+}
+
+.outline-h4 {
+  counter-reset: outline-h5;
+}
+
+.outline-h5 {
+  counter-reset: outline-h6;
+}
+
+.outline-h6 {
+  counter-reset: outline-h7;
+}
+
+/* 大纲标题 -显示*/
+.outline-h2 .outline-label:before {
+  counter-increment: outline-h2;
+  content: counter(outline-h2, cjk-ideographic) "、";
+}
+
+.outline-h3 .outline-label:before {
+  counter-increment: outline-h3;
+  content: counter(outline-h2, decimal) "." counter(outline-h3, decimal) " ";
+}
+
+.outline-h4 .outline-label:before {
+  counter-increment: outline-h4;
+  content: counter(outline-h2, decimal) "." counter(outline-h3, decimal) "."
+    counter(outline-h4, decimal) " ";
+}
+
+.outline-h5 .outline-label:before {
+  counter-increment: outline-h5;
+  content: counter(outline-h2, decimal) "." counter(outline-h3, decimal) "."
+    counter(outline-h4, decimal) "." counter(outline-h5, decimal) " ";
+}
+
+.outline-h6 .outline-label:before {
+  counter-increment: outline-h6;
+  content: counter(outline-h2, decimal) "." counter(outline-h3, decimal) "."
+    counter(outline-h4, decimal) "." counter(outline-h5, decimal) "."
+    counter(outline-h6, decimal) " ";
+}
+
+.outline-h7 .outline-label:before {
+  counter-increment: outline-h7;
+  content: counter(outline-h7, decimal) ". ";
+}
+
+/* 头部YAML格式 */
+pre.md-meta-block {
+  font-family: "Poppins";
+  color: var(--yaml-color) !important;
+  padding: 15px;
+  background: var(--yamlbg-color) !important;
+  /*border: 1px grey dashed !important;*/
+  font-size: 0.8rem;
+  line-height: 1.45;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-color) !important;
+  background-clip: padding-box;
+}
+
+/* 修改导出的PDF的页边距 */
+@page {
+  /* margin: 10mm -3mm; */
+  size: A4;
+  /* 以A4纸张的大小 */
+}
+
+/* 导出 PDF，基本设置 */
+@media print {
+  html {
+    font-size: var(--text-size);
+  }
+
+  /* h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    white-space: nowrap !important;
+  } */
+
+  table,
+  pre {
+    page-break-inside: avoid;
+  }
+
+  pre {
+    word-wrap: break-word;
+  }
+
+  h1 {
+    page-break-before: always;
+  }
+
+  h1:first-of-type {
+    page-break-before: avoid;
+  }
+
+  /* h2 {
+    page-break-before: always;
+  } */
+
+  h2:first-of-type {
+    page-break-before: avoid;
+  }
+}
+
+/* 导出PDF，防止无序列表大纲线错位 */
+@media print {
+  .typora-export * {
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* 导出PDF，使得标题等级提示消失 */
+  /* h2::after, */
+  h3::after,
+    h4::after,
+    h5::after,
+    h6::after,
+      /* h2.md-focus::after, */
+    h3.md-focus:after,
+    h4.md-focus:after,
+    h5.md-focus:after,
+    h6.md-focus:after {
+    display: none;
+  }
+  span[alt="tag"] {
+    display: none;
+  }
+
+  span[alt="star"] {
+    display: none !important;
+  }
+
+  /* 导出PDF，防止无序列表大纲线错位 */
+  blockquote ul ul::before {
+    content: "";
+    border-left: 1px solid var(--ul-before-color);
+    position: absolute;
+    left: -16px;
+    top: -15px;
+    bottom: 5px;
+  }
+
+  ul ul::before {
+    content: "";
+    border-left: 1px solid var(--ul-before-color);
+    position: absolute;
+    left: -16.5px;
+    top: -15px;
+    bottom: 5px;
+  }
+}
+.file-list-item:hover,
+.file-list-item.active {
+  background-color: var(--sidelist-selected-color);
+}
+
+.file-node-content,
+.file-tree-node.active .file-node-content {
+  color: var(--para-color);
+}
+.file-tree-node.active > .file-node-background {
+  background-color: var(--sidelist-selected-color);
+}
+.file-node-content:hover .file-node-icon {
+  color: var(--titlebefore-color);
+}
+.file-node-content:hover {
+  cursor: pointer;
+  color: var(--titlebefore-color) !important;
+}
+
+#sidebar-files-menu li a {
+  color: var(--bg-color) !important;
+}
+#file-library-search-panel input {
+  color: var(--para-color) !important;
+}
+#sidebar-loading-template {
+  background-color: var(--bg-color) !important;
+}
+.outline-item:hover {
+  color: var(--titlebefore-color) !important;
+  background-color: var(--sidelist-selected-color);
+}
+
+span[alt="waring"] :first-child {
+  color: var(--color-34) !important;
+}
+
+span[alt="waring"] :first-child::before {
+  background-image: url("./Icon_font/text/警告.svg");
+  vertical-align: middle;
+  content: " ";
+  width: 20px;
+  height: 19px;
+  display: inline-block;
+  margin: 0 0px;
+  margin-left: 1px;
+  position: initial;
+  background-repeat: no-repeat;
+}
+
+span[alt="reference"] :first-child {
+  color: var(--color-35) !important;
+}
+
+span[alt="reference"] :first-child::before {
+  background-image: url("./Icon_font/text/参考.svg");
+  vertical-align: middle;
+  content: " ";
+  width: 20px;
+  height: 19px;
+  display: inline-block;
+  margin: 0 0px;
+  margin-left: 1px;
+  position: initial;
+  background-repeat: no-repeat;
+}
+
+span[alt="idea"] :first-child {
+  color: var(--color-36) !important;
+}
+
+span[alt="idea"] :first-child::before {
+  background-image: url("./Icon_font/text/想法.svg");
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  content: " ";
+  width: 20px;
+  height: 21px;
+  display: inline-block;
+  margin: 0 4px;
+  margin-left: 0;
+  position: initial;
+}
+
+span[alt="alert"] :first-child::before {
+  background-image: url("./Icon_font/text/提醒.svg");
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  content: " ";
+  width: 20px;
+  height: 19px;
+  display: inline-block;
+  margin: 0 4px;
+  margin-left: 0;
+  position: initial;
+}
+span[alt="explain"] :first-child::before {
+  background-image: url("./Icon_font/text/说明.svg");
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  content: " ";
+  width: 20px;
+  height: 19px;
+  display: inline-block;
+  margin: 0 4px;
+  margin-left: 0;
+  position: initial;
+}
+
+span[alt="other"] :first-child {
+  color: var(--color-37) !important;
+}
+
+span[alt="other"] :first-child::before {
+  background-image: url("./Icon_font/text/其他.svg");
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  content: " ";
+  width: 20px;
+  height: 19px;
+  display: inline-block;
+  margin: 0 4px;
+  position: initial;
+}
+
+blockquote span[alt='waring'] :first-child, 
+blockquote span[alt='reference'] :first-child, 
+blockquote span[alt='idea'] :first-child, 
+blockquote span[alt='alert'] :first-child, 
+blockquote span[alt='explain'] :first-child, 
+blockquote span[alt='other'] :first-child {
+    font-weight: 700;
+    font-size: var(--font-size) !important;
+    margin: -10px -10px 0px -16px !important;
+    padding: 12px 12px 0px !important;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 1px;
+  
+}
+
+/* 增加网格线，参考掘金主题 */
+.typora-export-content,
+content,
+header,
+#write {
+  background-image: linear-gradient(
+      90deg,
+      rgba(60, 10, 30, 0.04) 3%,
+      transparent 0
+    ),
+    linear-gradient(1turn, rgba(60, 10, 30, 0.04) 3%, transparent 0);
+  background-size: 20px 20px;
+  background-position: 50%;
+}
+/*
+.file-library-file-node:not(.active):hover {
+  color: var(--sidebar-hover-color);
+}
+.file-library-file-node:not(.active):hover > .file-node-background {
+  background: var(--sidebar-hover-background);
+}
+
+
+.file-library-file-node .active > .file-node-title{
+  color: var(--titlebefore-color);
+} */
+
+/* html[theme-mode="dark"]  .pio-container{
+    filter: none !important;
+  }
+html[theme-mode="dark"]  {
+  filter: invert(1) hue-rotate(180deg);
+
+}
+html[theme-mode="dark"]  img {
+  filter: invert(0.85) hue-rotate(180deg);
+} */
+
+.dark-mode {
+  /* background-color:  #1d1e1f;
+  color: #d2d2d2; */
+  /* 主题切换更加自然 */
+  /* transition: all 0.3s ease-in-out; */
+}
+body {
+  /* 主题切换更加自然 */
+  transition: all 0.8s linear;
+}
+
+html[theme-mode="dark"] {
+  --bg-color: #1d1e1f;
+  --text-color: #9e9e9e;
+  --code-color: #abb2bf;
+  --code-line-color: rgba(171, 178, 191, 0.67);
+  --code-bg-color: #282c34;
+  --code-border-color: #343e51;
+  --codeblockline-color: #2f3542;
+  --code-block-bg-color: #282c34;
+  --md-fences-bg-color: #282c34;
+  --code-block-color: #abb2bf;
+  /* 标签颜色 */
+  --color-45: #2ab5cd;
+  /* cm-variable */
+  --color-59: #d19a66;
+  --table-n2-bg-color: #262626;
+
+  --scrollbar-color: #2f845e; /* 滚动条颜色 */
+  --toc-color: #00a0a0; /* 目录颜色 */
+  --tableevenrow-color: #1a1a1a; /* 表格偶数行颜色 */
+  --tablefocusrow-color: #263238; /* 表格鼠标悬停行颜色 */
+
+  --table-border-color: #9e9e9e; /* 滚动条颜色 */
+  --table-header-bg-color: #262626; /* 表格表头背景色 */
+  --tb-th-tr-color: #2f845e; /* 表格表头背景色 */
+  --sidebarbg-color: #1a1a1a; /* 侧边栏背景色 */
+  --titlebefore-color: #00c4b6; /* 各级标题点缀颜色 */
+  --sidelist-selected-color: #263238; /* 侧边栏条目选中背景色 */
+  --para-color: #a9a9a9; /* 段落文本颜色 */
+
+  --tt-bg-color: #263238; /* 行内代码背景色 */
+
+  --code-bolck-def-color: #61afef;
+
+  --code-bolck-keys-color: #c678dd;
+
+  --title-color: #c1c0c1; /* 标题颜色 */
+
+  --blockquoteicon-color: #5fa7e4; /* blockquote提示图标色 */
+  --blockquote-bg-color: #263238; /* blockquote背景色 */
+  --blockquote-color: inherit;
+  --blockquote-border-color: #0ea5e9;
+  --table-header-color: #c1c0c1; /* 标题颜色 */
+
+  --drake-highlight: #ff79c6; /* 行内代碼 */
+
+  --color-23: #a3497c; /* 代码注释 */
+
+  --color-32: var(--text-color); /* 右键菜单 */
+
+  --search-select-bg-color: #2e443a;
+  --search-select-text-color: #eaedec;
+  --select-text-bg-color: #3473b068;
+  --window-border: 1px solid #282828;
+  --select-text-font-color: #aaaaaa;
+
+  --item-hover-bg-color: #222222;
+
+  --blockquote-strong-color: #8b3333;
+
+  --color-46: var(--bg-color); /* 上标背景色 */
+  --a-h6-bg-color: var(--text-color); /* h5 h6 标题颜色 */
+
+  --color-bg: #000;
+}
+
+html[theme-mode="dark"] .layui-form-select dl {
+  background-color: var(--bg-color);
+}
+
+html[theme-mode="dark"] .layui-input,
+.layui-textarea,
+.layui-select {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+html[theme-mode="dark"] .layui-form-select dl dd.layui-this {
+  background-color: var(--bg-color);
+}
+
+html[theme-mode="dark"] .layui-form-select dl dd:hover {
+  background-color: var(--select-text-bg-color);
+}
+
+html[theme-mode="dark"] img {
+  filter: brightness(70%) contrast(130%);
+}
+
+html[theme-mode="dark"] #pio-container {
+  filter: brightness(70%) contrast(130%);
+}
+
+body[theme-mode="dark"] img {
+  filter: invert(0.85) hue-rotate(180deg);
+}
+
+body[theme-mode="dark"] table {
+  filter: invert(0.75) hue-rotate(180deg);
+}
+
+body[theme-mode="dark"] blockquote {
+  filter: invert(0.85) hue-rotate(180deg);
+}
+
+body[theme-mode="dark"] pre {
+  filter: invert(0.85) hue-rotate(180deg);
+}
+
+/* 哔哩哔哩视频适配 */
+.aspect-ratio {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%;
+  margin: 3% auto;
+  text-align: center;
+}
+
+.aspect-ratio iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}

@@ -1,0 +1,224 @@
+/*
+ * Copyright (C) 2023 Shaw, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+/** 本主题基于：
+  * drake-juejin: https://github.com/liangjingkanji/DrakeTyporaTheme
+  * 并参考dyzj-light: https://github.com/muggledy/typora-dyzj-theme
+ */
+
+@import url(./shaw/shaw.css);
+:root {
+  --text-color: #333333;
+  --bg-color: #ffffff;
+  --control-text-color: var(--text-color);
+  --meta-content-color: var(--text-color);
+  --active-file-border-color: var(--drake-accent);
+  --rawblock-edit-panel-bd: var(--code-block-bg-color);
+  --item-hover-bg-color: #e5e5e596;
+  --active-file-bg-color: var(--item-hover-bg-color);
+  --code-mirror-cursor-color: #fbc2eb;
+  --select-text-bg-color: #ffafa3;
+  /* 文本选中背景色（粉红） */
+  --blur-text-color: rgba(51, 51, 51, 0.5);
+  --drake-accent: #e95f59;
+  --drake-highlight: #d63200;
+  --a-color: #036aca;
+  --variable-color: var(--drake-highlight);
+  --outline-active-color: var(--a-color);
+  --code-block-bg-color: #f6f8fa;
+  --code-block-color: #24292e;
+  --title-color: #135ce0;
+  /* --blockquote-border-color: #e95f59; */
+  --blockquote-border-color: #ffc4c4;
+  --blockquote-color: #333333;
+  --blockquote-strong-color: #e76161;
+  /* --blockquote-bg-color: #f8f1f0; */
+  --blockquote-bg-color: #fdf4f5;
+  --strong-color: var(--title-color);
+  --text-line-height: 1.6;
+  /*正文行间距*/
+  --code-line-height: 1.6;
+  /*代码块行间距*/
+  --p-spacing: 1rem;
+  /*段间距*/
+  --text-size: 15px;
+  --tablefocusrow-color: #e0f8f8;
+  /* 表格鼠标悬停行颜色（淡蓝） */
+  --codeblocknum-color: rgba(128, 128, 255, 0.8);
+  /* 代码块行编号颜色（蓝色） */
+  --focus-color: #ff5d52;
+  /* 点击某些元素（如标题）显示的颜色（偏红） */
+  --codeblockline-color: #e0f8f8;
+  /* 代码块选中行颜色（青色） */
+  --timebodybg-color: #efeded;
+  /* 时间轴主体部分背景色（灰色） */
+  --spannote-color: #e91e64;
+  /* 小标签背景色（红色） */
+  --emptext-color: #fe5f58;
+  /* 几款强调型文本的颜色（红色） */
+  --ulol-color: #2ab5cd;
+  /* 有序无序列表前缀颜色（灰色） */
+  --olfore-color: #fff;
+  /* 有序列表字体颜色（白色） */
+  --sidebarbg-color: white;
+  /* 侧边栏背景色（白色） */
+  --sidelist-selected-color: #eeeeee;
+  /* 侧边栏条目选中背景色（灰色） */
+  --para-color: #000000;
+  /* 段落文本颜色（黑色） */
+  --titlebefore-color: #00c4b6;
+  /* 各级标题点缀颜色（绿色） */
+  --monospace: "Lora-Regular", "霞鹜文楷", "HarmonyOS", "Fira", "玄宋45S";
+  /*代码字体*/
+  --text-font: var(--monospace);
+  /*正文字体*/
+  --title-font: var(--monospace);
+  /*标题字体*/
+  --latex-font: var(--monospace);
+  /*LaTeX字体(不含英语)*/
+
+  --yamlbg-color: #f7f7f7;
+  /* 头部YAML背景色（白色） */
+  --yaml-color: #585858;
+  /* 头部YAML字体颜色（黑色） */
+  --scrollbar-color: #9e9e9e;
+
+  /* code bolck  */
+  --md-fences-bg-color: #f5f9fd;
+
+  --code-bolck-def-color: #4078f2;
+  --code-bolck-keys-color:   #a626a4;
+
+  --sidebar-hover-color:inherit;
+  --sidebar-hover-background: #e5e5e5;
+
+  --code-background: #282a36;
+  --code-current-line: #44475a;
+  --code-section: #44475a;
+  --code-foreground: #f8f8f2;
+  --code-comment: #cfbc0c;
+  --code-cyan: #8be9fd;
+  --code-green: #50fa7b;
+  --code-orange: #ffb86c;
+  --code-pink: #ff79c6;
+  --code-purple: #bd93f9;
+  --code-red: #ff5555;
+  --code-yellow: #f1fa8c;
+  --code-math: #151320;
+
+
+  /* mermaid */
+  --mermaid-journey-line-color: #7a7a7a;
+  --mermaid-journey-label-color: #333;
+  --md-diagram-fill-color: #e6e6e6;
+  --tt-bg-color: #fff5f5;
+  --codeMirror-gutters-color: #313335;
+  --codeMirror-gutters-br-color: #999999;
+  --a-h6-bg-color: #2a64ce;
+  --a-h3-bg-color: #34495e;
+  --marker-li-color: #8ebba6;
+  --md-focus-container-marker-color: var(--color-40);
+  --table-header-color: var(--color-40);
+  --tb-th-tr-color: #888;
+  --ty-quick-open-category-title-color: #bebebe;
+  --md-task-list-item-color: #999;
+  --head-after-color: #e07a5f;
+  --ul-before-color: #fefefe;
+  --h2-before-color: #deecdd;
+  --cm-variable-color: #80cbc4;
+  --kbd-broder-color: #5b5b5e;
+  --code-mirror-matchingbracket-color: #ffef28;
+  --timenode-bg-color: #ff5722;
+  --timenode-meta-color: #44d7b6;
+  --underline-color: #f47c35;
+  --head-after-corlor: #e07a5f;
+  --color-15: #bbb529;
+  --color-16: #6897bb;
+  --color-17: #cc7832;
+  --color-18: #ffd760;
+  --color-19: #9876aa;
+  --color-20: #aabbcc;
+  --color-21: #ffc66d;
+  --color-22: #6a8759;
+  --color-23: #cfbc0c;
+  --color-24: #bc3f3c;
+  --color-25: #e8bf6a;
+  --color-26: #a6e22e;
+  --color-27: #ff9e59;
+  --color-29: #3b514d;
+  --color-30: #ffef28;
+  --color-31: #ffdde1;
+  --color-32: #000;
+  --color-33: #f44336;
+  --color-34: #c00000;
+  --color-35: #428bca;
+  --color-36: #ffae00;
+  --color-37: #004d41;
+  --color-38: #81b29a;
+  --color-39: #d2d2d4;
+  --color-40: #e2542e;
+  --color-41: #e91e64;
+  --color-42: #02aaf4;
+  --color-43: #ffc50a;
+  --color-44: #8bc34a;
+  --color-45: #4c4c4c;
+  --color-46: #e96900;
+  --color-47: #777;
+  --color-48: #0f4b9b;
+  --color-49: #457b9d;
+  --color-50: #8f08c4;
+  --color-51: #36374c;
+  --color-52: #82b1ff;
+  --color-53: #decb6b;
+  --color-54: #f77669;
+  --color-55: #b4654d;
+  --color-56: #74531f;
+  --color-57: #b91919;
+  --color-58: #546e7a;
+  --color-59: #000000;
+  --color-60: #ffcb6b;
+  --color-61: #80cbae;
+  --color-62: #0000ff;
+  --color-63: #ec5f67;
+  --color-64: #263238;
+  --color-65: #22a2c9;
+  --color-66: #a31515;
+  --color-67: #82071e;
+  --color-68: #ffebe9;
+  --color-69: #116329;
+  --color-70: #dafbe1;
+
+  --cyan-600: #0891b2;
+
+  /* 滚动条颜色（灰色） */
+
+  /* --h2-underline-color: var(--title-color); */
+  --horizontal-divider-color: var(--title-color);
+  --height-light-color: var(--drake-highlight);
+  --height-light-border-color: var(--drake-highlight);
+  --yaml-color: #777777;
+  --yaml-bg-color: #f7f7f7;
+  --footnotes-bg-color: #3c3d3e;
+  --footnotes-highlight: #ffd760;
+  --table-border-color: #dfe2e5;
+  --table-header-bg-color: #f6f8fa;
+  --table-bg-color: var(--bg-color);
+  --table-n2-bg-color: #f6f8fa;
+  --input-bg-color: var(--item-hover-bg-color);
+  --btn-hover-bg-color: var(--item-hover-bg-color);
+  --checkbox-checked: url("data:image/svg+xml,%3Csvg class='icon' viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cpath d='M425.984 726.016l384-384-59.99-61.995-324.01 324.011-152.021-152.021L213.973 512zm384-598.016q36.01 0 61.013 25.984T896 213.974v596.01q0 34.005-25.003 59.99t-61.013 25.983h-596.01q-36.011 0-61.014-25.984t-25.003-59.989v-596.01q0-34.006 25.003-59.99T213.973 128h596.011z' fill='%2365b73b'/%3E%3C/svg%3E");
+  --checkbox-unchecked: url("data:image/svg+xml,%3Csvg class='icon' viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cpath d='M810.667 213.333v597.334H213.333V213.333h597.334m0-85.333H213.333C166.4 128 128 166.4 128 213.333v597.334C128 857.6 166.4 896 213.333 896h597.334C857.6 896 896 857.6 896 810.667V213.333C896 166.4 857.6 128 810.667 128z' fill='%23333333'/%3E%3C/svg%3E");
+}

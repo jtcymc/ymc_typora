@@ -1,37 +1,63 @@
+<div align="right"><a title="Chinese" href="./README_CN.md">中文</a></div>
+
 # ymc_typora
 
-#### 介绍
-typora扩展
+<img src="docs/imgs/theme-shaw.png" style="zoom:80%;" alt="theme-shaw" />
 
-#### 软件架构
-软件架构说明
+Based on [hexo-theme-melody](*https://github.com/Molunerfinn/hexo-theme-melody*)  &   [drake-juejin](https://github.com/liangjingkanji/DrakeTyporaTheme)theme.
+
+## 💻 Installation
+
+### GIT
+
+> If you are in Mainland China, you can download in [Gitee](*https://gitee.com/shawymc/ymc_typora.git*)
+
+Stable branch [recommend]:
+
+```bash
+  git clone -b master https://gitee.com/shawymc/ymc_typora.git ymc_typora
+```
+
+### Theme
+Copy theme files to Typora themes folder:
+
+```text
+  {Typora Install Root Directory}\themes
+```
+
+### Typora extend
+find `{Typora Install Root Directory}\resources\window.html`,search `id="write"` go to `<div id="write" class="ty-before-first-render" contenteditable="false" spellcheck="true" tabindex="-1">` previously added the following codes:
+```html
+  <script src="xxxUrl/js/autoload-shaw-page-component.min.js"></script>
+```
+
+## ⚙ Configuration & Use
+1. Open or Restart Typora. Click on `Themes` to switch to `shaw-light`.
+2. `File` -> `Preferences` -> `Export` ==> `HTML` ==> `Append in <head/>` add :
+```html
+  <script src="xxxUrl/js/autoload-shaw-page-component.min.js"></script>
+```
 
 
-#### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+## 🎉 Features
+- [x] Toolbar: 
+  - [x] BackTop.
+  - [x] Jump to bottom.
+  - [x] Change light🔆 / dark🌒 theme.
+  - [x] Change Live2d model.
+  - [x] Show or Hide table of Toc.
+- [x] Lazyload images. *. Only Support export `HTML`.
+- [x] Lazyload `iframe`. *. Only Support export `HTML`.
+- [x] Fasxbox for images. *. Only Support export `HTML`.
+- [x] FloatBtn for setting:
+  - [x] Mouse click effect `heart`.
+  - [x] Mouse click effect `firework`.
+  - [x] Mouse trail  effect.
+  - [x] Live2d setting. Includes model selection and switch.
+  - [x] light🔆 / dark🌒 theme change and sync system theme.
+-[ ] Others......
+## 📷 Screenshots
+<img src="docs/imgs/shaw-light.png" style="zoom:80%;" alt="shaw-light" />
+<img src="docs/imgs/shaw-dark.png" style="zoom:80%;" alt="shaw-dark" />
+<img src="docs/imgs/float-btn.png" style="zoom:100%;border: 1px solid" alt="float-btn" />
