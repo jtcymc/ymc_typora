@@ -89,9 +89,9 @@ Obsidian：标签支持，<font title="yellow">导出文件自动隐藏</font>
 
 图片：<font title="blue">图片自动编号及图释</font>
 
-<img src="./docs/imgs/shaw-light.png" style="zoom: 67%;" alt="图片自动编号及图释" />
+<img src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@0.0.3/docs/imgs/shaw-light.png" style="zoom: 67%;" alt="图片自动编号及图释" />
 
-<img src="./docs/imgs/shaw-dark.png" style="zoom: 67%;" alt="黑夜主题" />
+<img src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@0.0.3/docs/imgs/shaw-dark.png" style="zoom: 67%;" alt="黑夜主题" />
 
 
 
@@ -129,8 +129,6 @@ Obsidian：标签支持，<font title="yellow">导出文件自动隐藏</font>
 - [ ] 未完成任务2
 - [x] 已完成任务1
 - [x] 已完成任务2
-
-> 本主题（typora-dyzj-theme）的很多样式来自Hexo的<span alt="btn"><a href="https://butterfly.js.org">butterfly</a></span>及<span alt="btn"><a href="https://volantis.js.org/">Volantis</a></span>主题，再次表达感谢🙇‍♀️
 
 [^1]:[drake-juejin](https://github.com/liangjingkanji/DrakeTyporaTheme)
 [^2]:[muggledy/typora-dyzj-theme: Typora主题css样式 (github.com)](https://github.com/muggledy/typora-dyzj-theme/tree/master)

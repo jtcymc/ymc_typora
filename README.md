@@ -2,7 +2,7 @@
 
 # ymc_typora
 
-<img src="docs/imgs/theme-shaw.png" style="zoom:80%;" alt="theme-shaw" />
+<img src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@0.0.3/docs/imgs/theme-shaw.png" style="zoom:80%;" alt="theme-shaw" />
 
 Based on [hexo-theme-melody](*https://github.com/Molunerfinn/hexo-theme-melody*)  &   [drake-juejin](https://github.com/liangjingkanji/DrakeTyporaTheme)theme.
 
@@ -28,14 +28,14 @@ Copy theme files to Typora themes folder:
 ### Typora extend
 find `{Typora Install Root Directory}\resources\window.html`,search `id="write"` go to `<div id="write" class="ty-before-first-render" contenteditable="false" spellcheck="true" tabindex="-1">` previously added the following codes:
 ```html
-  <script src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@0.0.2/js/autoload-shaw-page-component.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@0.0.3/js/autoload-shaw-page-component.min.js"></script>
 ```
 
 ## ⚙ Configuration & Use
 1. Open or Restart Typora. Click on `Themes` to switch to `shaw-light`.
 2. `File` -> `Preferences` -> `Export` ==> `HTML` ==> `Append in <head/>` add :
 ```html
-  <script src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@0.0.2/js/autoload-shaw-page-component.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@0.0.3/js/autoload-shaw-page-component.min.js"></script>
 ```
 
 
@@ -56,8 +56,20 @@ find `{Typora Install Root Directory}\resources\window.html`,search `id="write"`
   - [x] Mouse trail  effect.
   - [x] Live2d setting. Includes model selection and switch.
   - [x] light🔆 / dark🌒 theme change and sync system theme.
--[ ] Others......
+  - [ ] Others......
+
+## demo
+
+
+
+<iframe src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@0.0.3/docs/html/demo.html" style="width:100%;height:700px;border: 1px solid"/>
+
+
+
+
+
 ## 📷 Screenshots
-<img src="docs/imgs/shaw-light.png" style="zoom:80%;" alt="shaw-light" />
-<img src="docs/imgs/shaw-dark.png" style="zoom:80%;" alt="shaw-dark" />
-<img src="docs/imgs/float-btn.png" style="zoom:100%;border: 1px solid" alt="float-btn" />
+
+<img src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@0.0.3/docs/imgs/shaw-light.png" style="zoom:80%;" alt="shaw-light" />
+		<img src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@0.0.3/docs/imgs/shaw-dark.png" style="zoom:80%;" alt="shaw-dark" />
+		<img src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@0.0.3/docs/imgs/float-btn.png" style="zoom:100%;border: 1px solid" alt="float-btn" />

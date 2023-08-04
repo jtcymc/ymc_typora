@@ -100,7 +100,7 @@ class FloatBtnMenu {
     divTag.style.cssText =
       "z-index: 999999; position: fixed; bottom: 20px; width: 60px; height: 60px;";
     let imgTag = document.createElement("img");
-    imgTag.src = "https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@0.0.2/dist/assets/setting.png";
+    imgTag.src = "https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@0.0.3/dist/assets/setting.png";
     divTag.appendChild(imgTag);
     document.body.appendChild(divTag);
 
