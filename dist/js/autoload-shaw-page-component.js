@@ -57,7 +57,7 @@ function loadBaseDeps() {
       false,
       true
     ),
-    loadExternalResource(`${oss_css_path}`, "animate.min", "css", true, false),
+    loadExternalResource(`${oss_css_path}`, "animate", "css", false, true),
   ]).then(() => {
     loadExternalResource(
       `${oss_js_path}/ui`,
