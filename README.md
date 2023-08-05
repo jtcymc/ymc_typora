@@ -47,6 +47,7 @@ find `{Typora Install Root Directory}\resources\window.html`,search `id="write"`
   - [x] Change light🔆 / dark🌒 theme.
   - [x] Change Live2d model.
   - [x] Show or Hide table of Toc.
+- [x] Live2d
 - [x] Lazyload images. *. Only Support export `HTML`.
 - [x] Lazyload `iframe`. *. Only Support export `HTML`.
 - [x] Fasxbox for images. *. Only Support export `HTML`.
