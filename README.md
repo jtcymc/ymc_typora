@@ -4,7 +4,7 @@
 
 <img src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@0.0.4/docs/imgs/theme-shaw.png" style="zoom:80%;" alt="theme-shaw" />
 
-Based on [hexo-theme-melody](*https://github.com/Molunerfinn/hexo-theme-melody*)  &   [drake-juejin](https://github.com/liangjingkanji/DrakeTyporaTheme)theme.
+Based on [drake-juejin](https://github.com/liangjingkanji/DrakeTyporaTheme)  &   [drake-juejin](https://github.com/liangjingkanji/DrakeTyporaTheme)theme.
 
 ## 💻 Installation
 
