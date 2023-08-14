@@ -479,7 +479,7 @@ h2 > .md-plain {
 }
 
 .on-focus-mode
-  h2.md-end-block.md-heading:not(.md-focus):not(.md-focus-container):after {
+h2.md-end-block.md-heading:not(.md-focus):not(.md-focus-container):after {
   background-color: var(--blur-text-color) !important;
 }
 
@@ -1240,10 +1240,10 @@ a.ty-link {
 } */
 
 :is(#write, #typora-source)
-  .cm-s-inner
-  .cm-variable
-  .cm-s-inner
-  span.cm-variable {
+.cm-s-inner
+.cm-variable
+.cm-s-inner
+span.cm-variable {
   color: var(--cyan-600);
 }
 
@@ -1587,7 +1587,7 @@ blockquote > h6 > .md-plain::before {
 
 /* —————————————————————————————————————————————链接设置———————————————————————————————————————————— */
 
-#write a {
+#write a:not(:has(img)) {
   text-decoration: none;
   /* color:  var(--md-focus-container-marker-color); */
   color: var(--color-38);
@@ -1620,7 +1620,7 @@ a:active {
   color: var(--color-39);
 }
 
-#write a[href*="http"]::after {
+#write a[href*="http"]:not(:has(img)):after {
   display: inline-block;
   position: relative;
   background-repeat: no-repeat;
@@ -1788,16 +1788,16 @@ span[alt="rainbow"],
 span[alt="rainbow"] * {
   padding-top: 3px;
   background-image: linear-gradient(
-    to left,
-    orangered,
-    orange,
-    gold,
-    lightgreen,
-    cyan,
-    dodgerblue,
-    mediumpurple,
-    hotpink,
-    orangered
+          to left,
+          orangered,
+          orange,
+          gold,
+          lightgreen,
+          cyan,
+          dodgerblue,
+          mediumpurple,
+          hotpink,
+          orangered
   );
   background-size: 110vw;
   -webkit-background-clip: text;
@@ -2317,9 +2317,9 @@ h2:hover a.anchor::after {
   bottom: 0px;
   top: auto;
   background-image: linear-gradient(
-    to right,
-    var(--titlebefore-color) 20%,
-    var(--h2-before-color) 100%
+          to right,
+          var(--titlebefore-color) 20%,
+          var(--h2-before-color) 100%
   );
   left: 0;
   right: 0;
@@ -2404,20 +2404,20 @@ h6 a {
 #write h4:not(blockquote > h4):before {
   counter-increment: inner-h4;
   content: counter(inner-h2, decimal) "." counter(inner-h3, decimal) "."
-    counter(inner-h4, decimal) " ";
+  counter(inner-h4, decimal) " ";
 }
 
 #write h5:not(blockquote > h5):before {
   counter-increment: inner-h5;
   content: counter(inner-h2, decimal) "." counter(inner-h3, decimal) "."
-    counter(inner-h4, decimal) "." counter(inner-h5, decimal) " ";
+  counter(inner-h4, decimal) "." counter(inner-h5, decimal) " ";
 }
 
 #write h6:not(blockquote > h6):before {
   counter-increment: inner-h6;
   content: counter(inner-h2, decimal) "." counter(inner-h3, decimal) "."
-    counter(inner-h4, decimal) "." counter(inner-h5, decimal) "."
-    counter(inner-h6, decimal) " ";
+  counter(inner-h4, decimal) "." counter(inner-h5, decimal) "."
+  counter(inner-h6, decimal) " ";
 }
 
 body[export-type="pdf"] #write h2:not(blockquote > h2):before,
@@ -2598,19 +2598,19 @@ span.md-toc-item.md-toc-h1 a.md-toc-inner span {
 .md-toc-content .md-toc-h4 .md-toc-inner:before {
   counter-increment: md-toc-h4;
   content: counter(md-toc-h2, decimal) "." counter(md-toc-h3, decimal) "."
-    counter(md-toc-h4, decimal) " ";
+  counter(md-toc-h4, decimal) " ";
 }
 
 .md-toc-content .md-toc-h5 .md-toc-inner:before {
   counter-increment: md-toc-h5;
   content: counter(md-toc-h2, decimal) "." counter(md-toc-h3, decimal) "."
-    counter(md-toc-h4, decimal) "." counter(md-toc-h5, decimal) " ";
+  counter(md-toc-h4, decimal) "." counter(md-toc-h5, decimal) " ";
 }
 .md-toc-content .md-toc-h6 .md-toc-inner:before {
   counter-increment: md-toc-h6;
   content: counter(md-toc-h2, decimal) "." counter(md-toc-h3, decimal) "."
-    counter(md-toc-h4, decimal) "." counter(md-toc-h5, decimal) "."
-    counter(md-toc-h6, decimal) " ";
+  counter(md-toc-h4, decimal) "." counter(md-toc-h5, decimal) "."
+  counter(md-toc-h6, decimal) " ";
 }
 
 /* 侧边栏标题自动编号 */
@@ -2654,20 +2654,20 @@ span.md-toc-item.md-toc-h1 a.md-toc-inner span {
 .outline-h4 .outline-label:before {
   counter-increment: outline-h4;
   content: counter(outline-h2, decimal) "." counter(outline-h3, decimal) "."
-    counter(outline-h4, decimal) " ";
+  counter(outline-h4, decimal) " ";
 }
 
 .outline-h5 .outline-label:before {
   counter-increment: outline-h5;
   content: counter(outline-h2, decimal) "." counter(outline-h3, decimal) "."
-    counter(outline-h4, decimal) "." counter(outline-h5, decimal) " ";
+  counter(outline-h4, decimal) "." counter(outline-h5, decimal) " ";
 }
 
 .outline-h6 .outline-label:before {
   counter-increment: outline-h6;
   content: counter(outline-h2, decimal) "." counter(outline-h3, decimal) "."
-    counter(outline-h4, decimal) "." counter(outline-h5, decimal) "."
-    counter(outline-h6, decimal) " ";
+  counter(outline-h4, decimal) "." counter(outline-h5, decimal) "."
+  counter(outline-h6, decimal) " ";
 }
 
 .outline-h7 .outline-label:before {
@@ -2748,14 +2748,14 @@ pre.md-meta-block {
   /* 导出PDF，使得标题等级提示消失 */
   /* h2::after, */
   h3::after,
-    h4::after,
-    h5::after,
-    h6::after,
-      /* h2.md-focus::after, */
-    h3.md-focus:after,
-    h4.md-focus:after,
-    h5.md-focus:after,
-    h6.md-focus:after {
+  h4::after,
+  h5::after,
+  h6::after,
+    /* h2.md-focus::after, */
+  h3.md-focus:after,
+  h4.md-focus:after,
+  h5.md-focus:after,
+  h6.md-focus:after {
     display: none;
   }
   span[alt="tag"] {
@@ -2911,22 +2911,22 @@ span[alt="other"] :first-child::before {
   position: initial;
 }
 
-blockquote span[alt='waring'] :first-child, 
-blockquote span[alt='reference'] :first-child, 
-blockquote span[alt='idea'] :first-child, 
-blockquote span[alt='alert'] :first-child, 
-blockquote span[alt='explain'] :first-child, 
+blockquote span[alt='waring'] :first-child,
+blockquote span[alt='reference'] :first-child,
+blockquote span[alt='idea'] :first-child,
+blockquote span[alt='alert'] :first-child,
+blockquote span[alt='explain'] :first-child,
 blockquote span[alt='other'] :first-child {
-    font-weight: 700;
-    font-size: var(--font-size) !important;
-    margin: -10px -10px 0px -16px !important;
-    padding: 12px 12px 0px !important;
-    border-top-right-radius: 4px;
-    border-top-left-radius: 4px;
-    display: flex;
-    align-items: center;
-    letter-spacing: 1px;
-  
+  font-weight: 700;
+  font-size: var(--font-size) !important;
+  margin: -10px -10px 0px -16px !important;
+  padding: 12px 12px 0px !important;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 1px;
+
 }
 
 /* 增加网格线，参考掘金主题 */
@@ -2935,11 +2935,11 @@ content,
 header,
 #write {
   background-image: linear-gradient(
-      90deg,
-      rgba(60, 10, 30, 0.04) 3%,
-      transparent 0
-    ),
-    linear-gradient(1turn, rgba(60, 10, 30, 0.04) 3%, transparent 0);
+          90deg,
+          rgba(60, 10, 30, 0.04) 3%,
+          transparent 0
+  ),
+  linear-gradient(1turn, rgba(60, 10, 30, 0.04) 3%, transparent 0);
   background-size: 20px 20px;
   background-position: 50%;
 }
