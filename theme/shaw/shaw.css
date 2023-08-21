@@ -1362,6 +1362,7 @@ span.cm-variable {
   background-color: var(--codeblockline-color);
 }
 
+
 .cm-s-typora-default .CodeMirror-selectedtext {
   background: var(--select-text-bg-color) !important;
 }
@@ -3042,6 +3043,10 @@ html[theme-mode="dark"] {
   --a-h6-bg-color: var(--text-color); /* h5 h6 标题颜色 */
 
   --color-bg: #000;
+
+  --color-31: #3e3b3b;
+
+  --yamlbg-color: #1a1a1a; /* 头部YAML背景色 */
 }
 
 html[theme-mode="dark"] .layui-form-select dl {
@@ -3063,7 +3068,7 @@ html[theme-mode="dark"] .layui-form-select dl dd:hover {
 }
 
 html[theme-mode="dark"] img {
-  filter: brightness(70%) contrast(130%);
+  filter: brightness(60%) contrast(130%);
 }
 
 html[theme-mode="dark"] #pio-container {
