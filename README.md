@@ -1,6 +1,13 @@
-<div align="right"><a title="Chinese" href="./README_CN.md">中文</a></div>
 
+
+### 🎉 Project Remarks
+name：ymc_typora   
+author：shaw  
+language：JavaScript && CSS  
+time：2022.03.15 ~ Now  
+demo:  https://jtcymc.github.io/ymc_typora/
 # ymc_typora
+<div align="right"><a title="Chinese" href="./README_CN.md">中文</a> | <a title="Chinese" href="./README.md">English</a></div> 
 
 <img src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@0.0.4/docs/imgs/theme-shaw.png" style="zoom:80%;" alt="theme-shaw" />
 

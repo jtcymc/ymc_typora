@@ -1,5 +1,11 @@
-<div align="right"><a title="Chinese" href="./README.md">English</a></div>
+<div align="right"><a title="Chinese" href="./README_CN.md">中文</a> | <a title="Chinese" href="./README.md">English</a></div>
 
+### 🎉 项目备注
+项目：ymc_typora   
+作者：shaw  
+语言：JavaScript && CSS  
+时间：2022.03.15 ~ 至今  
+案例:  https://jtcymc.github.io/ymc_typora/
 # ymc_typora
 
 <img src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@0.0.4/docs/imgs/theme-shaw.png" style="zoom:80%;" alt="theme-shaw" />
