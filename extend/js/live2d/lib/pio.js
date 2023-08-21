@@ -47,6 +47,11 @@ var Paul_Pio = function (prop) {
     // 存储在cookie中
     localStorage.setItem("darkModel", darkModel);
     localStorage.setItem("syncSysThemeMode", syncSysThemeMode);
+
+    window?.ymcEventBus.emit("changeThemeFloatCallBack", {
+      darkModel: darkModel,
+      isInit: isInit,
+    });
   }
   /**
    *  设置主题Render
@@ -207,7 +212,7 @@ var Paul_Pio = function (prop) {
         }
       };
       elements.home.onmouseover = function () {
-        modules.render(prop.content.home || "点击跳转<code>List</code>到顶部!");
+        modules.render(prop.content.home || "点击跳转<code>文章</code>到顶部!");
       };
       current.menu.appendChild(elements.home);
       // 更换模型
@@ -272,35 +277,7 @@ var Paul_Pio = function (prop) {
 
       // 目录展开和闭合
       elements.content.onclick = function () {
-        let content_tag = document.getElementById("my-pio-content");
-        // 已经展开了，则关闭
-        if (prop.contentStatus) {
-          const menus = document.querySelectorAll(".outline-item-open");
-          for (let i = 0; i < menus.length; i++) {
-            menus[i].classList.remove("outline-item-open");
-          }
-          content_tag.classList.remove("pio-contents-closed");
-          content_tag.classList.toggle("pio-contents-expanded");
-          prop.contentStatus = false;
-        } else {
-          // 获取所有标题元素
-          const expanders = document.querySelectorAll(".outline-expander");
-          // 遍历所有标题元素，改变其 class，实现展开和收缩
-          for (let i = 0; i < expanders.length; i++) {
-            if (
-              !expanders[i].parentNode.parentNode.classList.contains(
-                "outline-item-open"
-              )
-            ) {
-              expanders[i].parentNode.parentNode.classList.toggle(
-                "outline-item-open"
-              );
-            }
-          }
-          content_tag.classList.remove("pio-contents-expanded");
-          content_tag.classList.toggle("pio-contents-closed");
-          prop.contentStatus = true;
-        }
+        this.contentFun();
         modules.render(prop.contentStatus ? "点击收起目录!" : "点击展开目录!");
       };
       elements.content.onmouseover = function () {
@@ -467,12 +444,45 @@ var Paul_Pio = function (prop) {
     if (localStorage.getItem("showLive2d") != 0) {
       localStorage.setItem("showLive2d", 1);
     }
-
+    window?.ymcEventBus.emitGroup("close:live2d");
     // elements.show.onclick = function () {
     //   current.body?.classList.remove("hidden");
     //   sessionStorage.setItem("posterGirl", 1);
     //   that.init();
     // };
+  };
+
+  // 目录开/合
+  this.contentFun = function () {
+    let content_tag = document.getElementById("my-pio-content");
+    // 已经展开了，则关闭
+    if (prop.contentStatus) {
+      const menus = document.querySelectorAll(".outline-item-open");
+      for (let i = 0; i < menus.length; i++) {
+        menus[i].classList.remove("outline-item-open");
+      }
+      content_tag && content_tag.classList.remove("pio-contents-closed");
+      content_tag && content_tag.classList.toggle("pio-contents-expanded");
+      prop.contentStatus = false;
+    } else {
+      // 获取所有标题元素
+      const expanders = document.querySelectorAll(".outline-expander");
+      // 遍历所有标题元素，改变其 class，实现展开和收缩
+      for (let i = 0; i < expanders.length; i++) {
+        if (
+          !expanders[i].parentNode.parentNode.classList.contains(
+            "outline-item-open"
+          )
+        ) {
+          expanders[i].parentNode.parentNode.classList.toggle(
+            "outline-item-open"
+          );
+        }
+      }
+      content_tag && content_tag.classList.remove("pio-contents-expanded");
+      content_tag && content_tag.classList.toggle("pio-contents-closed");
+      prop.contentStatus = true;
+    }
   };
   // 跟随系统 切换主题
   if (syncSysThemeMode == 1) {
@@ -532,7 +542,7 @@ var Paul_Pio = function (prop) {
   });
   // 切换主题
   window?.ymcEventBus.on("changeTheme", function (mode) {
-    if (mode) {
+    if (mode != undefined) {
       // 不跟随系统
       syncSysThemeMode = 0;
       darkModel = parseInt(mode);
@@ -540,6 +550,8 @@ var Paul_Pio = function (prop) {
       window?.ymcEventBus.emit("removeSyncTheme");
     }
   });
+
+  window?.ymcEventBus.on("changeContent", this.contentFun);
 
   // 判断是否是夜间模式
   changeThemeMode(elements, modules, true);

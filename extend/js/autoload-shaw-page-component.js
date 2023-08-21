@@ -51,13 +51,28 @@ function loadBaseDeps() {
       false
     ),
     loadExternalResource(
-      `http://cdn.bootcss.com/font-awesome/4.4.0/css`,
-      "font-awesome",
+      `https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css`,
+      "all",
       "css",
       false,
       true
     ),
     loadExternalResource(`${oss_css_path}`, "animate.min", "css", true, false),
+    loadExternalResource(
+      `${oss_css_path}/float`,
+      "float-btn",
+      "css",
+      true,
+      true
+    ),
+    loadExternalResource(
+      `${oss_js_path}/ui`,
+      "shaw-base-fun",
+      "js",
+      false,
+      true,
+      true
+    ),
   ]).then(() => {
     loadExternalResource(
       `${oss_js_path}/ui`,

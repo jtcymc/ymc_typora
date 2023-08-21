@@ -90,55 +90,195 @@ class FloatBtnMenu {
       this.createElement();
       this.initFloatBtnEvent();
       this.initMenuInfo();
+
+      // 按钮事件
+      this.buttonsClick();
     }
   }
 
   createElement() {
     let divTag = document.createElement("div");
     divTag.id = this.options.containerId;
-    divTag.classList.add("layui-btn-container");
-    divTag.style.cssText =
-      "z-index: 999999; position: fixed; bottom: 20px; width: 60px; height: 60px;";
-    let imgTag = document.createElement("img");
-    imgTag.src = "https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@0.0.4/dist/assets/setting.png";
-    divTag.appendChild(imgTag);
-    document.body.appendChild(divTag);
+    divTag.classList.add("floatTools");
+    // divTag.classList.add("layui-btn-container");
+    // divTag.style.cssText =
+    //   "z-index: 999999; position: fixed; bottom: 20px; width: 60px; height: 60px;";
+    // let imgTag = document.createElement("img");
+    // imgTag.src = "https://cdn.shawhnt.top:13003/js/ui/static/setting.png";
+    // divTag.appendChild(imgTag);
 
     // 创建HTML字符串
     let htmlStr = "";
     htmlStr += `
-    <div id='ss_menu'>
-    <div>
-      <i class="fa fa-qq"></i>
-    </div>
-    <div>
-      <i class="fa fa-weibo"></i>
-    </div>
-    <div>
-      <i class="fa fa-weixin"></i>
-    </div>
-    <div>
-      <i class="fa fa-renren"></i>
-    </div>
-    <div class='menu'>
-      <div class='share' id='ss_toggle' data-rot='180'>
-        <div class='circle'></div>
-        <div class='bar'></div>
-      </div>
-    </div>
-  </div>     
-`;
+        <div class="float-item setting" id="float-btn-setting" title="设置">
+          <i class="fa-solid fa-gear"></i>
+        </div>
+        <div class="float-item top" id="float-btn-top" title="返回顶部">
+          <i class="fa-solid fa-circle-chevron-up"></i>
+        </div>
+        <div class="float-item bottom" id="float-btn-bottom" title="跳转底部">
+          <i class="fa-solid fa-circle-chevron-down "></i>
+        </div>
+
+        <div class="float-item content" id="float-btn-content" title="目录">
+          <i class="fa-solid fa-list "></i>
+        </div>
+
+        <div class="float-item theme" id="float-btn-theme" title="主题切换">
+           <i id="float-btn-theme-i" class="fas fa-solid fa-sun "></i>
+         </div>
+        <div class="float-item span-num" >
+            <span id="float-btn-bottom-num">0%</span>
+        </div>
+       `;
+
+    //    <div class="float-item theme" id="float-btn-theme">
+    //    <i class="fas fa-solid fa-sun fa-beat" style="--fa-animation-duration: 5s;--fa-beat-scale: 1.5;"></i>
+    //  </div>
+    divTag.innerHTML = htmlStr;
+    document.body.appendChild(divTag);
   }
 
-  buttonsClick(e, index) {}
+  buttonsClick() {
+    const floatBtn_top = document.getElementById("float-btn-top");
+    const floatBtn_bottom = document.getElementById("float-btn-bottom");
+    const floatBtn_theme = document.getElementById("float-btn-theme");
+    const floatBtn_content = document.getElementById("float-btn-content");
+    // 绑定鼠标进入事件，跳转顶部
+    floatBtn_top.onclick = () => {
+      if (isFloatBtnDragging == 1) {
+        // 是拖拽事件
+        return;
+      } else {
+        isFloatBtnDragging = 2;
+      }
+
+      const writeDiv = document.getElementById("write"); // 获取 id 为 'write' 的 div 元素
+      if (writeDiv) {
+        // 检查 writeDiv 是否存在
+        writeDiv.scrollIntoView({
+          behavior: "smooth", // 使用平滑滚动
+        });
+      }
+      isFloatBtnDragging = 0;
+    };
+
+    // 绑定鼠标进入事件，目录展开
+    floatBtn_content.onclick = () => {
+      if (isFloatBtnDragging == 1) {
+        // 是拖拽事件
+        return;
+      } else {
+        isFloatBtnDragging = 2;
+      }
+      window?.ymcEventBus.emit("changeContent");
+      isFloatBtnDragging = 0;
+    };
+
+    // 绑定鼠标进入事件，跳转底部
+    floatBtn_bottom.onclick = () => {
+      if (isFloatBtnDragging == 1) {
+        // 是拖拽事件
+        return;
+      } else {
+        isFloatBtnDragging = 2;
+      }
+      // 获取 id 为 'write' 的 div 元素
+      let bottom_tag = document.getElementById("my-bottom");
+      // 获取 id 为 'write' 的 div 元素
+      const writeDiv = document.getElementById("write");
+      if (writeDiv && !bottom_tag) {
+        // 如果 writeDiv 存在，将锚点元素添加到 writeDiv 后面
+        if (writeDiv) {
+          // 创建一个 <a> 标签并设置其 id 属性为 'my-bottom'
+          const anchorTag = document.createElement("div");
+          anchorTag.id = "my-bottom";
+          // anchorTag.href = '#my-bottom'
+          // 在 <div id="write"> 元素后插入锚点
+          writeDiv.appendChild(anchorTag);
+        }
+      } else if (writeDiv && bottom_tag) {
+        // const y = bottom_tag.clientHeight + window.pageYOffset; // 计算要滚动的顶部位置
+        // window.scrollTo({ top: y, behavior: 'smooth' }); // 滚动到指定位置
+        // location.href='#my-bottom'
+        bottom_tag.scrollIntoView({
+          behavior: "smooth", // 使用平滑滚动
+
+          block: "start",
+        });
+      }
+      isFloatBtnDragging = 0;
+    };
+    const floatBtn_theme_i = document.getElementById("float-btn-theme-i");
+    if (floatBtn_theme_i) {
+      const toggleIcon = (data) => {
+        if (data.darkModel == 0) {
+          floatBtn_theme_i.classList.remove("fa-moon");
+          !floatBtn_theme_i.classList.contains("fa-sun") &&
+            floatBtn_theme_i.classList.add("fa-sun");
+        } else {
+          floatBtn_theme_i.classList.remove("fa-sun");
+          !floatBtn_theme_i.classList.contains("fa-moon") &&
+            floatBtn_theme_i.classList.add("fa-moon");
+        }
+      };
+
+      window?.ymcEventBus.on("changeThemeFloatCallBack", toggleIcon);
+
+      // 绑定鼠标进入事件，切换主题
+      floatBtn_theme.onclick = () => {
+        if (isFloatBtnDragging == 1 || !floatBtn_theme_i) {
+          // 是拖拽事件
+          return;
+        } else {
+          isFloatBtnDragging = 2;
+        }
+        let darkModel = 0;
+        if (document.documentElement.getAttribute("theme-mode") === "dark") {
+          darkModel = 0;
+        } else {
+          darkModel = 1;
+        }
+        window?.ymcEventBus.emit("changeTheme", darkModel);
+        isFloatBtnDragging = 0;
+      };
+    }
+
+    const floatBtn_top_span = document.getElementById("float-btn-bottom-num");
+    const scrollHandle = ymcFun.throttleFun((event) => {
+      if (!floatBtn_top_span) {
+        return;
+      }
+      const maxScroll = document.body.scrollHeight - window.innerHeight;
+      const scrollPercent =
+        Math.round(Math.min((100 * window.scrollY) / maxScroll, 100)) + "%";
+      if (floatBtn_top_span !== scrollPercent) {
+        floatBtn_top_span.innerText = scrollPercent;
+      }
+    }, 100);
+
+    floatBtn_top &&
+      floatBtn_top_span &&
+      document.addEventListener("scroll", scrollHandle);
+
+    // // 绑定鼠标进入事件，切换主题
+    // floatBtn_theme.onclick = () => {
+    //   if (isFloatBtnDragging == 1) {
+    //     // 是拖拽事件
+    //     return;
+    //   } else {
+    //     isFloatBtnDragging = 2;
+    //   }
+    // };
+  }
 
   initMenuInfo() {
     var $ = layui.$;
     var layer = layui.layer;
     var form = layui.form;
-    const floatBtn = document.getElementById(this.options.containerId);
+    const floatBtn_setting = document.getElementById("float-btn-setting");
     // 绑定鼠标进入事件，显示提示框
-    floatBtn.onclick = () => {
+    floatBtn_setting.onclick = () => {
       if (isFloatBtnDragging == 1) {
         // 是拖拽事件
         return;
@@ -403,10 +543,15 @@ class FloatBtnMenu {
       floatBtn.style.opacity = 0.75;
     });
 
-    window.addEventListener("resize", function () {
-      // 自动吸附到窗口边缘
-      floatBtn.style.left = "5px";
-      floatBtn.style.bottom = "40px";
-    });
+    document.addEventListener(
+      "resize",
+      ymcFun.throttleFun(function () {
+        // 自动吸附到窗口边缘
+        floatBtn.style.left = "5px";
+        // floatBtn.style.bottom = "0";
+        // floatBtn.style.top = "0";
+      }),
+      50
+    );
   }
 }

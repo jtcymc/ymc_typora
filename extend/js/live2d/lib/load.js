@@ -27,6 +27,8 @@ const initConfig = {
 
 var hitokotoIntervalID = null;
 
+var hitokotoTimerID = null;
+
 var countDown = 0;
 
 function showKeyDownInfo(timeout) {
@@ -62,10 +64,16 @@ function showKeyDownInfo(timeout) {
   pio_reference.modules.render(keyDownStr, timeout);
 }
 
+function closeLive2dAfter() {
+  // 清理一下
+  hitokotoIntervalID && clearInterval(hitokotoIntervalID);
+  hitokotoTimerID && clearTimeout(hitokotoTimerID);
+}
+
+
+
 function loadDianaModel() {
-  if (hitokotoIntervalID) {
-    clearInterval(hitokotoIntervalID);
-  }
+  closeLive2dAfter();
   pio_reference = new Paul_Pio(initConfig);
 
   pio_alignment = "right";
@@ -97,7 +105,7 @@ function loadDianaModel() {
         pio_reference.modules.render(text, displayTime);
         if (countDown <= 1000) {
           // 在 3 秒后执行一个函数
-          setTimeout(function () {
+          hitokotoTimerID = setTimeout(function () {
             showKeyDownInfo(5000);
             countDown = countDown + 1;
           }, displayTime + 10);
@@ -113,6 +121,8 @@ function onModelLoad(model) {
   const modelNmae = model.internalModel.settings.name;
   const coreModel = model.internalModel.coreModel;
   const motionManager = model.internalModel.motionManager;
+
+  window?.ymcEventBus.onGroup("close:live2d", "timer", closeLive2dAfter);
 
   if (pio_action_tag) {
     // 2023/05/29 避免切换模型后 按钮偏移的问题
