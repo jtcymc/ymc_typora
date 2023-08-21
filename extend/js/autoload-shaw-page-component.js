@@ -7,202 +7,203 @@ const oss_css_path = `${cdn_url}/css`;
 const formMenuData = JSON.parse(localStorage.getItem("configMenu"));
 
 function loadBaseDeps() {
-  // load  Layui
+    // load  Layui
 
-  return Promise.all([
-    // 引入 layui.css
-    loadExternalResource(
-      `${cdn_url}/layui-v2.8.4/layui/css`,
-      "typora-layui",
-      "css",
-      false,
-      true
-    ),
-    loadExternalResource(
-      `${cdn_url}/layui-v2.8.4/layui`,
-      "layui",
-      "js",
-      false,
-      false
-    ),
-    loadExternalResource(
-      `${oss_js_path}/core`,
-      "EventEmitter",
-      "js",
-      false,
-      true,
-      true
-    ).then(() => {
-      window.ymcEventBus = new EventEmitter();
-    }),
+    return Promise.all([
+        // 引入 layui.css
+        loadExternalResource(
+            `${cdn_url}/layui-v2.8.4/layui/css`,
+            "typora-layui",
+            "css",
+            false,
+            true
+        ),
+        loadExternalResource(
+            `${cdn_url}/layui-v2.8.4/layui`,
+            "layui",
+            "js",
+            false,
+            false
+        ),
+        loadExternalResource(
+            `${oss_js_path}/core`,
+            "EventEmitter",
+            "js",
+            false,
+            true,
+            true
+        ).then(() => {
+            window.ymcEventBus = new EventEmitter();
+        }),
 
-    loadExternalResource(
-      `${oss_css_path}/float`,
-      "float-btn",
-      "css",
-      false,
-      true
-    ),
-    // 烟花特效使用
-    loadExternalResource(
-      `https://unpkg.com/theme-shokax-anime@0.0.4`,
-      "anime.shokax",
-      "js",
-      false
-    ),
-    loadExternalResource(
-      `https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css`,
-      "all",
-      "css",
-      false,
-      true
-    ),
-    loadExternalResource(`${oss_css_path}`, "animate.min", "css", true, false),
-    loadExternalResource(
-      `${oss_css_path}/float`,
-      "float-btn",
-      "css",
-      true,
-      true
-    ),
-    loadExternalResource(
-      `${oss_js_path}/ui`,
-      "shaw-base-fun",
-      "js",
-      false,
-      true,
-      true
-    ),
-  ]).then(() => {
-    loadExternalResource(
-      `${oss_js_path}/ui`,
-      "shaw-float-btn",
-      "js",
-      false,
-      true
-    ).then(() => {
-      new FloatBtnMenu();
+        loadExternalResource(
+            `${oss_css_path}/float`,
+            "float-btn",
+            "css",
+            false,
+            true
+        ),
+        // 烟花特效使用
+        loadExternalResource(
+            `https://unpkg.com/theme-shokax-anime@0.0.4`,
+            "anime.shokax",
+            "js",
+            false
+        ),
+        loadExternalResource(
+            `https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css`,
+            "all",
+            "css",
+            false,
+            true
+        ),
+        loadExternalResource(`${oss_css_path}`, "animate.min", "css", true, false),
+        loadExternalResource(
+            `${oss_css_path}/float`,
+            "float-btn",
+            "css",
+            true,
+            true
+        ),
+        loadExternalResource(
+            `${oss_js_path}/ui`,
+            "shaw-base-fun",
+            "js",
+            false,
+            true,
+            true
+        ),
+    ]).then(() => {
+        loadExternalResource(
+            `${oss_js_path}/ui`,
+            "shaw-float-btn",
+            "js",
+            false,
+            true
+        ).then(() => {
+            new FloatBtnMenu();
+        });
+        layui.use(["form", "laydate", "util"], function () {
+            //   var layer = layui.layer;
+        });
     });
-    layui.use(["form", "laydate", "util"], function () {
-      //   var layer = layui.layer;
-    });
-  });
 }
 
 function loadLive2D() {
-  Promise.all([
-    // 设置 script 标签的 src 属性值
-    loadExternalResource(
-      `${live2d_url_prefix}`,
-      "live2dcubismcore",
-      "js",
-      false,
-      true,
-      true
-    ),
-    loadExternalResource(
-      `${live2d_url_prefix}`,
-      "pixi",
-      "js",
-      false,
-      true,
-      true
-    ),
-  ]).then(() => {
-    // 配置选项的具体用法见 README.md
-
     Promise.all([
-      loadExternalResource(
-        `${live2d_url_prefix}`,
-        "pio_sdk4",
-        "js",
-        false,
-        true,
-        true
-      ),
-      loadExternalResource(
-        `${live2d_url_prefix}`,
-        "cubism4",
-        "js",
-        false,
-        true,
-        true
-      ),
-      loadExternalResource(
-        `${live2d_url_prefix}`,
-        "pio",
-        "js",
-        false,
-        true,
-        true
-      ),
-      loadExternalResource(
-        `${live2d_url_prefix}`,
-        "pio",
-        "css",
-        false,
-        true,
-        false
-      ),
-      loadExternalResource(
-        `${live2d_url_prefix}`,
-        "load",
-        "js",
-        false,
-        true,
-        true
-      ),
+        // 设置 script 标签的 src 属性值
+        loadExternalResource(
+            `${live2d_url_prefix}`,
+            "live2dcubismcore",
+            "js",
+            false,
+            true,
+            false
+        ),
+        loadExternalResource(
+            `${live2d_url_prefix}`,
+            "pixi",
+            "js",
+            false,
+            true,
+            false
+        ),
     ]).then(() => {
-      window.addEventListener("load", function () {
-        loadDianaModel();
-      });
+        // 配置选项的具体用法见 README.md
+
+        Promise.all([
+            loadExternalResource(
+                `${live2d_url_prefix}`,
+                "pio_sdk4",
+                "js",
+                false,
+                true,
+                true
+            ),
+            loadExternalResource(
+                `${live2d_url_prefix}`,
+                "cubism4",
+                "js",
+                false,
+                true,
+                true
+            ),
+            loadExternalResource(
+                `${live2d_url_prefix}`,
+                "pio",
+                "js",
+                false,
+                true,
+                true
+            ),
+            loadExternalResource(
+                `${live2d_url_prefix}`,
+                "pio",
+                "css",
+                false,
+                true,
+                false
+            ),
+            loadExternalResource(
+                `${live2d_url_prefix}`,
+                "load",
+                "js",
+                false,
+                true,
+                true
+            ),
+        ]).then(() => {
+            window.addEventListener("load", function () {
+                loadDianaModel();
+            });
+        });
     });
-  });
 }
 
 function loadCSSComponent() {
-  loadExternalResource(
-    `${oss_js_path}/ui`,
-    "shaw-css-component",
-    "js",
-    true,
-    true
-  ).then(() => {
-    if (formMenuData && Object.keys(formMenuData).length > 0) {
-      if (formMenuData.mouseHeart == 1) {
-        mouseHeartInit();
-      }
-      if (formMenuData.mouseTail == 1) {
-        fairyDustCursor();
-      }
+    loadExternalResource(
+        `${oss_js_path}/ui`,
+        "shaw-css-component",
+        "js",
+        false,
+        true,
+        true
+    ).then(() => {
+        if (formMenuData && Object.keys(formMenuData).length > 0) {
+            if (formMenuData.mouseHeart == 1) {
+                mouseHeartInit();
+            }
+            if (formMenuData.mouseTail == 1) {
+                fairyDustCursor();
+            }
 
-      if (formMenuData.firework == 1) {
-        firework();
-      }
-      window?.ymcEventBus.on("onMouseHeart", mouseHeartInit);
-      window?.ymcEventBus.on("onMouseTail", fairyDustCursor);
-      window?.ymcEventBus.on("onFirework", firework);
-    }
-  });
+            if (formMenuData.firework == 1) {
+                firework();
+            }
+            window?.ymcEventBus.on("onMouseHeart", mouseHeartInit);
+            window?.ymcEventBus.on("onMouseTail", fairyDustCursor);
+            window?.ymcEventBus.on("onFirework", firework);
+        }
+    });
 }
 
 function loadToolComponent() {
-  loadExternalResource(
-    `${oss_js_path}/ui`,
-    "shaw-web-tools",
-    "js",
-    false,
-    true,
-    true
-  ),
     loadExternalResource(
-      `${oss_js_path}/ui`,
-      "shaw-typora-expend",
-      "js",
-      false,
-      true,
-      true
-    );
+        `${oss_js_path}/ui`,
+        "shaw-web-tools",
+        "js",
+        false,
+        true,
+        true
+    ),
+        loadExternalResource(
+            `${oss_js_path}/ui`,
+            "shaw-typora-expend",
+            "js",
+            false,
+            true,
+            true
+        );
 }
 
 /**
@@ -216,45 +217,45 @@ function loadToolComponent() {
  * @returns
  */
 function loadExternalResource(
-  urlPrefix,
-  fileName,
-  type,
-  awaysNew = false, // 是否添加随机代码，避免缓存
-  isMini = true, // 是否调用压缩的代码
-  isObfuscate = false // 是否调用混淆的代码
+    urlPrefix,
+    fileName,
+    type,
+    awaysNew = false, // 是否添加随机代码，避免缓存
+    isMini = true, // 是否调用压缩的代码
+    isObfuscate = false // 是否调用混淆的代码
 ) {
-  return new Promise((resolve, reject) => {
-    let tag;
+    return new Promise((resolve, reject) => {
+        let tag;
 
-    let url = isMini
-      ? `${urlPrefix}/${fileName}.min`
-      : `${urlPrefix}/${fileName}`;
-    url = isObfuscate ? `${url}.obfuscated.${type}` : `${url}.${type}`;
-    if (type === "css") {
-      tag = document.createElement("link");
-      tag.rel = "stylesheet";
-      tag.href = awaysNew
-        ? url + "?v={{" + Math.random().toString(36).substring(7) + " }}"
-        : url;
-    } else if (type === "js") {
-      tag = document.createElement("script");
-      tag.src = awaysNew
-        ? url + "?v={{" + Math.random().toString(36).substring(7) + " }}"
-        : url;
-    }
-    if (tag) {
-      tag.onload = () => resolve(url);
-      tag.onerror = () => reject(url);
-      document.head.appendChild(tag);
-    }
-  });
+        let url = isMini
+            ? `${urlPrefix}/${fileName}.min`
+            : `${urlPrefix}/${fileName}`;
+        url = isObfuscate ? `${url}.obfuscated.${type}` : `${url}.${type}`;
+        if (type === "css") {
+            tag = document.createElement("link");
+            tag.rel = "stylesheet";
+            tag.href = awaysNew
+                ? url + "?v={{" + Math.random().toString(36).substring(7) + " }}"
+                : url;
+        } else if (type === "js") {
+            tag = document.createElement("script");
+            tag.src = awaysNew
+                ? url + "?v={{" + Math.random().toString(36).substring(7) + " }}"
+                : url;
+        }
+        if (tag) {
+            tag.onload = () => resolve(url);
+            tag.onerror = () => reject(url);
+            document.head.appendChild(tag);
+        }
+    });
 }
 
 window.addEventListener("DOMContentLoaded", function () {
-  loadBaseDeps().then(() => {
-    // 在页面初始化时加载Live2D
-    loadLive2D();
-    loadCSSComponent();
-    loadToolComponent();
-  });
+    loadBaseDeps().then(() => {
+        // 在页面初始化时加载Live2D
+        loadLive2D();
+        loadCSSComponent();
+        loadToolComponent();
+    });
 });
