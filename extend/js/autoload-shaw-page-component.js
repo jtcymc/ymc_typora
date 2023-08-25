@@ -3,7 +3,7 @@ var cdn_url = "/dist/";
 const oss_js_path = `${cdn_url}/js`;
 const live2d_url_prefix = `${oss_js_path}/live2d/lib`;
 const oss_css_path = `${cdn_url}/css`;
-
+const live2d_css_url_prefix = `${oss_css_path}/pio`;
 const formMenuData = JSON.parse(localStorage.getItem("configMenu"));
 
 function loadBaseDeps() {
@@ -126,7 +126,7 @@ function loadLive2D() {
                 "js",
                 false,
                 true,
-                true
+                false
             ),
             loadExternalResource(
                 `${live2d_url_prefix}`,
@@ -137,7 +137,7 @@ function loadLive2D() {
                 true
             ),
             loadExternalResource(
-                `${live2d_url_prefix}`,
+                `${live2d_css_url_prefix}`,
                 "pio",
                 "css",
                 false,
