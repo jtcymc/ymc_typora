@@ -1231,6 +1231,10 @@ a.ty-link {
   color: var(--color-16);
 }
 
+.cm-s-inner .cm-header, .cm-s-inner.cm-header{
+  color: #5b5bc3;
+}
+
 /* .cm-s-inner span.cm-keyword {
   color: var(--color-17);
 } */
