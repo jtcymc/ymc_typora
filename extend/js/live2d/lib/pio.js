@@ -277,7 +277,7 @@ var Paul_Pio = function (prop) {
 
       // 目录展开和闭合
       elements.content.onclick = function () {
-        this.contentFun();
+        window?.ymcEventBus.emit("changeContent");
         modules.render(prop.contentStatus ? "点击收起目录!" : "点击展开目录!");
       };
       elements.content.onmouseover = function () {
