@@ -11,7 +11,7 @@
 <img src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@latest/docs/imgs/theme-shaw.png" style="zoom:80%;" alt="theme-shaw" />
 
 
-基于 [drake-juejin](https://github.com/liangjingkanji/DrakeTyporaTheme) 和 [drake-juejin](https://github.com/liangjingkanji/DrakeTyporaTheme) 主题。
+基于 [typora-dyzj-theme](https://github.com/muggledy/typora-dyzj-theme) 和 [drake-juejin](https://github.com/liangjingkanji/DrakeTyporaTheme) 主题。
 
 
 ## 💻 安装
@@ -110,7 +110,8 @@
 "<span class='CustomImg' alt='"+ F.getAttribute("alt")+"'>" +F.outerHTML+"</span></span>"
 ```
 
-<img src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@latest/docs/imgs/image-20230429153541789.png" style="zoom:80%;" alt="pageInfo" />
+<img src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@latest/docs/imgs/image-20230506123149789.png" style="zoom:80%;" alt="pageInfo" />
+
 
 
 

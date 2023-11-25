@@ -11,7 +11,7 @@ demo:  https://jtcymc.github.io/ymc_typora/
 
 <img src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@latest/docs/imgs/theme-shaw.png" style="zoom:80%;" alt="theme-shaw" />
 
-Based on [drake-juejin](https://github.com/liangjingkanji/DrakeTyporaTheme)  &   [drake-juejin](https://github.com/liangjingkanji/DrakeTyporaTheme)theme.
+Based on [typora-dyzj-theme](https://github.com/muggledy/typora-dyzj-theme)  &   [drake-juejin](https://github.com/liangjingkanji/DrakeTyporaTheme) theme.
 
 ## 💻 Installation
 
@@ -95,7 +95,7 @@ Currently, images will be automatically numbered, but to correctly display emoti
 "<span class='CustomImg' alt='"+ F.getAttribute("alt")+"'>" +F.outerHTML+"</span></span>"
 ```
 
-<img src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@latest/docs/imgs/image-20230429153541789.png" style="zoom:80%;" alt="pageInfo" />
+<img src="https://cdn.jsdelivr.net/gh/jtcymc/ymc_typora@latest/docs/imgs/image-20230506123149789.png" style="zoom:80%;" alt="pageInfo" />
 
 
 
