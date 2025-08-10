@@ -47,9 +47,12 @@ body {
   background: var(--bg-color);
   transition: background-color 0.3s ease, color 0.3s ease;
   /* 添加微妙的背景纹理 */
-  background-image: 
-    radial-gradient(circle at 25% 25%, rgba(0,0,0,0.02) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(0,0,0,0.02) 0%, transparent 50%);
+  background-image: radial-gradient(
+      circle at 25% 25%,
+      rgba(0, 0, 0, 0.02) 0%,
+      transparent 50%
+    ),
+    radial-gradient(circle at 75% 75%, rgba(0, 0, 0, 0.02) 0%, transparent 50%);
   background-size: 100px 100px;
   background-position: 0 0, 50px 50px;
 }
@@ -65,7 +68,7 @@ p {
   font-weight: 400;
   color: var(--text-color);
   /* 添加微妙的文字阴影 */
-  text-shadow: 0 1px 2px rgba(0,0,0,0.02);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
 }
 
 /*code block*/
@@ -80,10 +83,8 @@ p {
   color: var(--code-block-color);
   border: 1px solid var(--table-border-color);
   line-height: var(--code-line-height);
-  box-shadow: 
-    0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   margin: 2.5rem 0;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -91,21 +92,23 @@ p {
 }
 
 .md-fences::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--drake-accent), var(--drake-highlight));
+  background: linear-gradient(
+    90deg,
+    var(--drake-accent),
+    var(--drake-highlight)
+  );
   border-radius: 16px 16px 0 0;
 }
 
 .md-fences:hover {
-  box-shadow: 
-    0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
 }
 
@@ -303,21 +306,30 @@ tt {
   margin: 0 3px;
   padding: 2px 8px;
   color: var(--drake-highlight);
-  font-family: "Fira Code", "Roboto Mono", "Source Code Pro", Monaco, courier, monospace;
-  background: linear-gradient(135deg, var(--tt-bg-color), rgba(255,255,255,0.8));
+  font-family: "Fira Code", "Roboto Mono", "Source Code Pro", Monaco, courier,
+    monospace;
+  background: linear-gradient(
+    135deg,
+    var(--tt-bg-color),
+    rgba(255, 255, 255, 0.8)
+  );
   font-weight: 500;
   border-radius: 6px;
   font-size: 0.9rem;
-  border: 1px solid rgba(0,0,0,0.1);
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   transition: all 0.2s ease;
 }
 
 #write code:hover,
 tt:hover {
   transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  background: linear-gradient(135deg, var(--tt-bg-color), rgba(255,255,255,0.9));
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(
+    135deg,
+    var(--tt-bg-color),
+    rgba(255, 255, 255, 0.9)
+  );
 }
 
 #write .CodeMirror-gutters {
@@ -373,7 +385,11 @@ blockquote:before {
   left: 0;
   top: 0;
   height: 100%;
-  background: linear-gradient(180deg, var(--drake-accent), var(--drake-highlight));
+  background: linear-gradient(
+    180deg,
+    var(--drake-accent),
+    var(--drake-highlight)
+  );
   border-radius: 2px;
 }
 
@@ -386,8 +402,7 @@ blockquote {
   border-left: none;
   font-family: "霞鹜文楷";
   margin: 3rem 0;
-  box-shadow: 
-    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   border: 1px solid var(--blockquote-border-color);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -395,8 +410,7 @@ blockquote {
 }
 
 blockquote:hover {
-  box-shadow: 
-    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
   transform: translateY(-2px);
   background: var(--blockquote-bg-color);
@@ -430,13 +444,17 @@ blockquote:hover {
 }
 
 #write a::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 0;
   height: 2px;
   bottom: -2px;
   left: 0;
-  background: linear-gradient(90deg, var(--drake-accent), var(--drake-highlight));
+  background: linear-gradient(
+    90deg,
+    var(--drake-accent),
+    var(--drake-highlight)
+  );
   transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -462,8 +480,7 @@ img {
   border-right: none;
   vertical-align: baseline;
   border-radius: 12px;
-  box-shadow: 
-    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   /* 使其变成块元素，以便使用水平和垂直居中的技术 */
@@ -476,8 +493,7 @@ img {
 
 img:hover {
   transform: scale(1.02);
-  box-shadow: 
-    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
@@ -529,7 +545,7 @@ h6,
   letter-spacing: 0.5px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   /* 添加微妙的文字阴影 */
-  text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 /* 不建议使用五级、六级标题，所以颜色调浅 */
@@ -742,8 +758,7 @@ ol:last-child {
   background-color: var(--table-bg-color);
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 
-    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   border-collapse: collapse;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -751,8 +766,7 @@ ol:last-child {
 }
 
 #write table:hover {
-  box-shadow: 
-    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
   transform: translateY(-2px);
 }
@@ -888,7 +902,11 @@ div[alt="notitle-table"] table tr td {
 #write mark {
   border: 2px solid var(--height-light-border-color);
   color: var(--height-light-color);
-  background: linear-gradient(135deg, rgba(229, 62, 62, 0.1), rgba(229, 62, 62, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgba(229, 62, 62, 0.1),
+    rgba(229, 62, 62, 0.05)
+  );
   padding: 0.2rem 0.8rem;
   border-radius: 20px;
   margin: 0 0.3rem;
@@ -901,7 +919,11 @@ div[alt="notitle-table"] table tr td {
 #write mark:hover {
   transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(229, 62, 62, 0.2);
-  background: linear-gradient(135deg, rgba(229, 62, 62, 0.15), rgba(229, 62, 62, 0.08));
+  background: linear-gradient(
+    135deg,
+    rgba(229, 62, 62, 0.15),
+    rgba(229, 62, 62, 0.08)
+  );
 }
 
 /*shortcut*/
@@ -910,12 +932,12 @@ kbd {
   background: linear-gradient(135deg, #f7fafc, #edf2f7);
   color: var(--text-color);
   margin: 0 0.4rem;
-  font-family: "Fira Code", "Roboto Mono", "Source Code Pro", Monaco, courier, monospace !important;
+  font-family: "Fira Code", "Roboto Mono", "Source Code Pro", Monaco, courier,
+    monospace !important;
   font-size: 0.9rem;
   padding: 0.4em 0.6em;
   border-radius: 8px;
-  box-shadow: 
-    0 2px 4px rgba(0, 0, 0, 0.1),
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
   font-weight: 600;
   transition: all 0.2s ease;
@@ -923,8 +945,7 @@ kbd {
 
 kbd:hover {
   transform: translateY(-1px);
-  box-shadow: 
-    0 4px 8px rgba(0, 0, 0, 0.15),
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15),
     inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
@@ -3502,13 +3523,21 @@ html[theme-mode="dark"] h5 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--scrollbar-color), rgba(203, 213, 224, 0.8));
+  background: linear-gradient(
+    180deg,
+    var(--scrollbar-color),
+    rgba(203, 213, 224, 0.8)
+  );
   border-radius: 4px;
   transition: background 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, var(--drake-accent), var(--scrollbar-color));
+  background: linear-gradient(
+    180deg,
+    var(--drake-accent),
+    var(--scrollbar-color)
+  );
 }
 
 /* 响应式设计 */
@@ -3552,12 +3581,12 @@ html[theme-mode="dark"] h5 {
   h6 {
     font-size: 1rem;
   }
-  
+
   img {
     border-radius: 8px;
     margin: 1.5rem auto;
   }
-  
+
   #write code,
   tt {
     padding: 1px 6px;
@@ -3590,8 +3619,5 @@ html[theme-mode="dark"] h5 {
 
 /* 设置标签块字体颜色 */
 html[theme-mode="dark"] span[alt="tag"] {
-  color: var(--span-color-45) !important;
-}
-
   color: var(--span-color-45) !important;
 }
