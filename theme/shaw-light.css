@@ -13,212 +13,228 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
+ * GitHub XXX
  */
 /** 本主题基于：
   * drake-juejin: https://github.com/liangjingkanji/DrakeTyporaTheme
-  * 并参考dyzj-light: https://github.com/muggledy/typora-dyzj-theme
+  * 并参考dyzj-light: https://github.com/muggledy/typora-dyzj-theme/releases/lates
  */
 
 @import url(./shaw/shaw.css);
+
 :root {
-  --text-color: #333333;
-  --bg-color: #ffffff;
+  /* 基础色彩 - 更优雅的配色方案 */
+  --text-color: #2d3748;
+  --bg-color: #fafbfc;
   --control-text-color: var(--text-color);
   --meta-content-color: var(--text-color);
   --active-file-border-color: var(--drake-accent);
   --rawblock-edit-panel-bd: var(--code-block-bg-color);
-  --item-hover-bg-color: #e5e5e596;
+
+  /* 交互色彩 - 更精致的悬停效果 */
+  --item-hover-bg-color: #f7fafc;
   --active-file-bg-color: var(--item-hover-bg-color);
-  --code-mirror-cursor-color: #fbc2eb;
-  --select-text-bg-color: #ffafa3;
-  /* 文本选中背景色（粉红） */
-  --blur-text-color: rgba(51, 51, 51, 0.5);
-  --drake-accent: #e95f59;
-  --drake-highlight: #d63200;
-  --a-color: #036aca;
+  --code-mirror-cursor-color: #3182ce;
+  --select-text-bg-color: #ebf8ff;
+
+  /* 文本层次 - 更细腻的层次感 */
+  --blur-text-color: rgba(45, 55, 72, 0.65);
+
+  /* 主题色彩 - 现代蓝色系配色 */
+  --drake-accent: #3182ce;
+  --drake-highlight: #e53e3e;
+  --a-color: #2b6cb0;
   --variable-color: var(--drake-highlight);
   --outline-active-color: var(--a-color);
-  --code-block-bg-color: #f6f8fa;
-  --code-block-color: #24292e;
-  --title-color: #135ce0;
-  /* --blockquote-border-color: #e95f59; */
-  --blockquote-border-color: #ffc4c4;
-  --blockquote-color: #333333;
-  --blockquote-strong-color: #e76161;
-  /* --blockquote-bg-color: #f8f1f0; */
-  --blockquote-bg-color: #fdf4f5;
-  --strong-color: var(--title-color);
-  --text-line-height: 1.6;
-  /*正文行间距*/
+
+  /* 代码块 - 更清晰的语法高亮 */
+  --code-block-bg-color: #f7fafc;
+  --code-block-color: #1a202c;
+  --md-fences-bg-color: #f7fafc;
+
+  /* 标题色彩 - 层次分明的蓝色系 */
+  --title-color: #2b6cb0;
+  --strong-color: #2d3748;
+
+  /* 引用块 - 更优雅的配色 */
+  --blockquote-border-color: #e2e8f0;
+  --blockquote-color: #4a5568;
+  --blockquote-strong-color: #e53e3e;
+  --blockquote-bg-color: #f7fafc;
+
+  /* 排版设置 - 更舒适的阅读体验 */
+  --text-line-height: 1.75;
   --code-line-height: 1.6;
-  /*代码块行间距*/
-  --p-spacing: 1rem;
-  /*段间距*/
-  --text-size: 15px;
-  --tablefocusrow-color: #e0f8f8;
-  /* 表格鼠标悬停行颜色（淡蓝） */
-  --codeblocknum-color: rgba(128, 128, 255, 0.8);
-  /* 代码块行编号颜色（蓝色） */
-  --focus-color: #ff5d52;
-  /* 点击某些元素（如标题）显示的颜色（偏红） */
-  --codeblockline-color: #e0f8f8;
-  /* 代码块选中行颜色（青色） */
-  --timebodybg-color: #efeded;
-  /* 时间轴主体部分背景色（灰色） */
-  --spannote-color: #e91e64;
-  /* 小标签背景色（红色） */
-  --emptext-color: #fe5f58;
-  /* 几款强调型文本的颜色（红色） */
-  --ulol-color: #2ab5cd;
-  /* 有序无序列表前缀颜色（灰色） */
+  --p-spacing: 1.4rem;
+  --text-size: 16px;
+
+  /* 表格色彩 - 更清晰的层次 */
+  --tablefocusrow-color: #edf2f7;
+  --table-border-color: #e2e8f0;
+  --table-header-bg-color: #f7fafc;
+  --table-bg-color: var(--bg-color);
+  --table-n2-bg-color: #f7fafc;
+
+  /* 代码相关 */
+  --codeblocknum-color: rgba(74, 85, 104, 0.8);
+  --focus-color: #e53e3e;
+  --codeblockline-color: #f7fafc;
+
+  /* 时间轴 */
+  --timebodybg-color: #f7fafc;
+
+  /* 标签和强调 */
+  --spannote-color: #e53e3e;
+  --emptext-color: #e53e3e;
+  --ulol-color: #38a169;
   --olfore-color: #fff;
-  /* 有序列表字体颜色（白色） */
-  --sidebarbg-color: white;
-  /* 侧边栏背景色（白色） */
-  --sidelist-selected-color: #eeeeee;
-  /* 侧边栏条目选中背景色（灰色） */
-  --para-color: #000000;
-  /* 段落文本颜色（黑色） */
-  --titlebefore-color: #00c4b6;
-  /* 各级标题点缀颜色（绿色） */
+
+  /* 侧边栏 */
+  --sidebarbg-color: #ffffff;
+  --sidelist-selected-color: #f7fafc;
+
+  /* 段落文本 */
+  --para-color: #2d3748;
+
+  /* 标题装饰 */
+  --titlebefore-color: #38a169;
+
+  /* 字体设置 */
   --monospace: "Lora-Regular", "霞鹜文楷", "HarmonyOS", "Fira", "玄宋45S";
-  /*代码字体*/
   --text-font: var(--monospace);
-  /*正文字体*/
   --title-font: var(--monospace);
-  /*标题字体*/
   --latex-font: var(--monospace);
-  /*LaTeX字体(不含英语)*/
 
-  --yamlbg-color: #f7f7f7;
-  /* 头部YAML背景色（白色） */
-  --yaml-color: #585858;
-  /* 头部YAML字体颜色（黑色） */
-  --scrollbar-color: #9e9e9e;
+  /* YAML头部 */
+  --yamlbg-color: #f7fafc;
+  --yaml-color: #4a5568;
+  --scrollbar-color: #cbd5e0;
 
-  /* code bolck  */
-  --md-fences-bg-color: #f5f9fd;
+  /* 代码块语法高亮 - 更清晰的配色 */
+  --code-bolck-def-color: #2b6cb0;
+  --code-bolck-keys-color: #805ad5;
 
-  --code-bolck-def-color: #4078f2;
-  --code-bolck-keys-color:   #a626a4;
+  /* 侧边栏交互 */
+  --sidebar-hover-color: inherit;
+  --sidebar-hover-background: #f7fafc;
 
-  --sidebar-hover-color:inherit;
-  --sidebar-hover-background: #e5e5e5;
+  /* 代码主题色彩 */
+  --code-background: #f7fafc;
+  --code-current-line: #f7fafc;
+  --code-section: #f7fafc;
+  --code-foreground: #1a202c;
+  --code-comment: #4a5568;
+  --code-cyan: #00b5d8;
+  --code-green: #38a169;
+  --code-orange: #dd6b20;
+  --code-pink: #d53f8c;
+  --code-purple: #805ad5;
+  --code-red: #e53e3e;
+  --code-yellow: #d69e2e;
+  --code-math: #f7fafc;
 
-  --code-background: #282a36;
-  --code-current-line: #44475a;
-  --code-section: #44475a;
-  --code-foreground: #f8f8f2;
-  --code-comment: #cfbc0c;
-  --code-cyan: #8be9fd;
-  --code-green: #50fa7b;
-  --code-orange: #ffb86c;
-  --code-pink: #ff79c6;
-  --code-purple: #bd93f9;
-  --code-red: #ff5555;
-  --code-yellow: #f1fa8c;
-  --code-math: #151320;
+  /* Mermaid图表 */
+  --mermaid-journey-line-color: #cbd5e0;
+  --mermaid-journey-label-color: #4a5568;
+  --md-diagram-fill-color: #f7fafc;
 
+  /* 行内代码 */
+  --tt-bg-color: #f7fafc;
 
-  /* mermaid */
-  --mermaid-journey-line-color: #7a7a7a;
-  --mermaid-journey-label-color: #333;
-  --md-diagram-fill-color: #e6e6e6;
-  --tt-bg-color: #fff5f5;
-  --codeMirror-gutters-color: #313335;
-  --codeMirror-gutters-br-color: #999999;
-  --a-h6-bg-color: #2a64ce;
-  --a-h3-bg-color: #34495e;
-  --marker-li-color: #8ebba6;
-  --md-focus-container-marker-color: var(--color-40);
-  --table-header-color: var(--color-40);
-  --tb-th-tr-color: #888;
-  --ty-quick-open-category-title-color: #bebebe;
-  --md-task-list-item-color: #999;
-  --head-after-color: #e07a5f;
-  --ul-before-color: #fefefe;
-  --h2-before-color: #deecdd;
-  --cm-variable-color: #80cbc4;
-  --kbd-broder-color: #5b5b5e;
-  --code-mirror-matchingbracket-color: #ffef28;
-  --timenode-bg-color: #ff5722;
-  --timenode-meta-color: #44d7b6;
-  --underline-color: #f47c35;
-  --head-after-corlor: #e07a5f;
-  --color-15: #bbb529;
-  --color-16: #6897bb;
-  --color-17: #cc7832;
-  --color-18: #ffd760;
-  --color-19: #9876aa;
-  --color-20: #aabbcc;
-  --color-21: #ffc66d;
-  --color-22: #6a8759;
-  --color-23: #cfbc0c;
-  --color-24: #bc3f3c;
-  --color-25: #e8bf6a;
-  --color-26: #a6e22e;
-  --color-27: #ff9e59;
-  --color-29: #3b514d;
-  --color-30: #ffef28;
-  --color-31: #ffdde1;
-  --color-32: #000;
-  --color-33: #f44336;
-  --color-34: #c00000;
-  --color-35: #428bca;
-  --color-36: #ffae00;
-  --color-37: #004d41;
-  --color-38: #81b29a;
-  --color-39: #d2d2d4;
-  --color-40: #e2542e;
-  --color-41: #e91e64;
-  --color-42: #02aaf4;
-  --color-43: #ffc50a;
-  --color-44: #8bc34a;
-  --color-45: #4c4c4c;
-  --color-46: #e96900;
-  --color-47: #777;
-  --color-48: #0f4b9b;
-  --color-49: #457b9d;
-  --color-50: #8f08c4;
-  --color-51: #36374c;
-  --color-52: #82b1ff;
-  --color-53: #decb6b;
-  --color-54: #f77669;
-  --color-55: #b4654d;
-  --color-56: #74531f;
-  --color-57: #b91919;
-  --color-58: #546e7a;
-  --color-59: #000000;
-  --color-60: #ffcb6b;
-  --color-61: #80cbae;
-  --color-62: #0000ff;
-  --color-63: #ec5f67;
-  --color-64: #263238;
-  --color-65: #22a2c9;
-  --color-66: #a31515;
-  --color-67: #82071e;
-  --color-68: #ffebe9;
-  --color-69: #116329;
-  --color-70: #dafbe1;
+  /* 代码编辑器 */
+  --codeMirror-gutters-color: #f7fafc;
+  --codeMirror-gutters-br-color: #cbd5e0;
+  --a-h6-bg-color: #4a5568;
+  --a-h3-bg-color: #4a5568;
+  --marker-li-color: #38a169;
+  --md-focus-container-marker-color: var(--drake-accent);
+  --table-header-color: var(--drake-accent);
+  --tb-th-tr-color: #4a5568;
+  --ty-quick-open-category-title-color: #718096;
+  --md-task-list-item-color: #718096;
+  --head-after-color: #e53e3e;
+  --ul-before-color: #f7fafc;
+  --h2-before-color: #f0fff4;
+  --cm-variable-color: #00b5d8;
+  --kbd-broder-color: #cbd5e0;
+  --code-mirror-matchingbracket-color: #d69e2e;
+  --timenode-bg-color: #e53e3e;
+  --timenode-meta-color: #38a169;
+  --underline-color: #dd6b20;
+  --head-after-corlor: #e53e3e;
+  --tag-color-45: #4a5568;
 
-  --cyan-600: #0891b2;
+  /* 代码语法高亮色彩 - 更丰富的配色 */
+  --color-15: #dd6b20;
+  --color-16: #3182ce;
+  --color-17: #e53e3e;
+  --color-18: #d69e2e;
+  --color-19: #805ad5;
+  --color-20: #00b5d8;
+  --color-21: #dd6b20;
+  --color-22: #38a169;
+  --color-23: #4a5568;
+  --color-24: #e53e3e;
+  --color-25: #dd6b20;
+  --color-26: #38a169;
+  --color-27: #e53e3e;
+  --color-29: #2d3748;
+  --color-30: #d69e2e;
+  --color-31: #f7fafc;
+  --color-32: #2d3748;
+  --color-33: #e53e3e;
+  --color-34: #c53030;
+  --color-35: #3182ce;
+  --color-36: #dd6b20;
+  --color-37: #38a169;
+  --color-38: #38a169;
+  --color-39: #718096;
+  --color-40: #e53e3e;
+  --color-41: #d53f8c;
+  --color-42: #00b5d8;
+  --color-43: #d69e2e;
+  --color-44: #38a169;
+  --color-45: #4a5568;
+  --color-46: #dd6b20;
+  --color-47: #718096;
+  --color-48: #2b6cb0;
+  --color-49: #4a5568;
+  --color-50: #805ad5;
+  --color-51: #2d3748;
+  --color-52: #3182ce;
+  --color-53: #d69e2e;
+  --color-54: #e53e3e;
+  --color-55: #8b4513;
+  --color-56: #a0522d;
+  --color-57: #c53030;
+  --color-58: #4a5568;
+  --color-59: #2d3748;
+  --color-60: #dd6b20;
+  --color-61: #38a169;
+  --color-62: #3182ce;
+  --color-63: #e53e3e;
+  --color-64: #f7fafc;
+  --color-65: #00b5d8;
+  --color-66: #c53030;
+  --color-67: #c53030;
+  --color-68: #fed7d7;
+  --color-69: #38a169;
+  --color-70: #c6f6d5;
 
-  /* 滚动条颜色（灰色） */
+  --cyan-600: #00b5d8;
+  --font-text-color: #ffffff;
 
-  /* --h2-underline-color: var(--title-color); */
+  /* 其他设置 */
+  --span-color-45: var(--bg-color);
   --horizontal-divider-color: var(--title-color);
   --height-light-color: var(--drake-highlight);
   --height-light-border-color: var(--drake-highlight);
-  --yaml-color: #777777;
-  --yaml-bg-color: #f7f7f7;
-  --footnotes-bg-color: #3c3d3e;
-  --footnotes-highlight: #ffd760;
-  --table-border-color: #dfe2e5;
-  --table-header-bg-color: #f6f8fa;
-  --table-bg-color: var(--bg-color);
-  --table-n2-bg-color: #f6f8fa;
+  --footnotes-bg-color: #2d3748;
+  --footnotes-highlight: #d69e2e;
   --input-bg-color: var(--item-hover-bg-color);
   --btn-hover-bg-color: var(--item-hover-bg-color);
-  --checkbox-checked: url("data:image/svg+xml,%3Csvg class='icon' viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cpath d='M425.984 726.016l384-384-59.99-61.995-324.01 324.011-152.021-152.021L213.973 512zm384-598.016q36.01 0 61.013 25.984T896 213.974v596.01q0 34.005-25.003 59.99t-61.013 25.983h-596.01q-36.011 0-61.014-25.984t-25.003-59.989v-596.01q0-34.006 25.003-59.99T213.973 128h596.011z' fill='%2365b73b'/%3E%3C/svg%3E");
-  --checkbox-unchecked: url("data:image/svg+xml,%3Csvg class='icon' viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cpath d='M810.667 213.333v597.334H213.333V213.333h597.334m0-85.333H213.333C166.4 128 128 166.4 128 213.333v597.334C128 857.6 166.4 896 213.333 896h597.334C857.6 896 896 857.6 896 810.667V213.333C896 166.4 857.6 128 810.667 128z' fill='%23333333'/%3E%3C/svg%3E");
+
+  /* 复选框图标 - 更现代的样式 */
+  --checkbox-checked: url("data:image/svg+xml,%3Csvg class='icon' viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cpath d='M425.984 726.016l384-384-59.99-61.995-324.01 324.011-152.021-152.021L213.973 512zm384-598.016q36.01 0 61.013 25.984T896 213.974v596.01q0 34.005-25.003 59.99t-61.013 25.983h-596.01q-36.011 0-61.014-25.984t-25.003-59.989v-596.01q0-34.006 25.003-59.99T213.973 128h596.011z' fill='%2338a169'/%3E%3C/svg%3E");
+  --checkbox-unchecked: url("data:image/svg+xml,%3Csvg class='icon' viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cpath d='M810.667 213.333v597.334H213.333V213.333h597.334m0-85.333H213.333C166.4 128 128 166.4 128 213.333v597.334C128 857.6 166.4 896 213.333 896h597.334C857.6 896 896 857.6 896 810.667V213.333C896 166.4 857.6 128 810.667 128z' fill='%234a5568'/%3E%3C/svg%3E");
 }
